@@ -9,7 +9,7 @@
 
     <children>
 
-        <VBox alignment="CENTER" prefHeight="365.0" prefWidth="473.0" spacing="25">
+        <VBox alignment="CENTER" prefHeight="587.0" prefWidth="596.0" spacing="25">
             <children>
 
                 <!-- TITOLO -->

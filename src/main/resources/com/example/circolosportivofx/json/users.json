@@ -1,0 +1,37 @@
+{
+  "admins": [
+    {
+      "name": "Alice",
+      "surname": "Smith",
+      "email": "alicesmithadmin@gmail.com",
+      "password": "admin"
+    },
+    {
+      "name": "admin",
+      "surname": "admin",
+      "email": "admin",
+      "password": "admin"
+    }
+
+  ],
+  "members": [
+    {
+      "name": "Bob",
+      "surname": "Johnson",
+      "email": "bobjohnson@yahoo.com",
+      "password": "password1"
+    },
+    {
+      "name": "Carol",
+      "surname": "Williams",
+      "email": "carolwilliams@hotmail.com",
+      "password": "password2"
+    },
+    {
+      "name": "David",
+      "surname": "Brown",
+      "email": "davidebrown@libero.it",
+      "password": "password3"
+    }
+  ]
+}

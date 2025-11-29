@@ -1,3 +1,5 @@
+package com.example.circolosportivofx;
+
 /**
  * The type Member.
  */

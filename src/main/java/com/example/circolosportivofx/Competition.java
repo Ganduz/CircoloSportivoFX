@@ -1,3 +1,7 @@
+package com.example.circolosportivofx;
+
+import java.util.ArrayList;
+
 /**
  * The type Competition.
  */
@@ -13,6 +17,11 @@ public final class Competition extends Activity
     public Competition(String type, String name)
     {
         super(type, name);
+    }
+
+    public Competition(String type, String name,  ArrayList<Member> subscribers)
+    {
+        super(type, name, subscribers);
     }
 
 }

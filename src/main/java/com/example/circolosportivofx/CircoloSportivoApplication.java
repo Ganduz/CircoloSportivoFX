@@ -2,6 +2,7 @@ package com.example.circolosportivofx;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -11,13 +12,25 @@ import java.util.Objects;
 public class CircoloSportivoApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(CircoloSportivoApplication.class.getResource("add-member-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 473, 365);
+        Data data = Data.getInstance();
+
+
+        FXMLLoader fxmlLoader = new FXMLLoader(CircoloSportivoApplication.class.getResource("views/login-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         scene.getStylesheets().add(
-                Objects.requireNonNull(getClass().getResource("styles/addMember.css")).toExternalForm()
+                Objects.requireNonNull(getClass().getResource("styles/login.css")).toExternalForm()
         );
+
+
+        stage.show();
         stage.setTitle("");
         stage.setScene(scene);
-        stage.show();
+
+        stage.setOnCloseRequest(e -> {
+            //data.saveUsers();
+            //data.saveActivities();
+        });
+
+
     }
 }

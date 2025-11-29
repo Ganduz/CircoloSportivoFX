@@ -13,13 +13,13 @@
       </Label>
       <Label layoutX="188.0" layoutY="101.0" text="Welcome back! PLease enter your details" textFill="#000000ad" />
       <Label layoutX="112.0" layoutY="141.0" text="Email" />
-      <Button layoutX="116.0" layoutY="307.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="369.0" styleClass="login-button" text="SIgn In">
+      <Button fx:id="loginButton" layoutX="116.0" layoutY="307.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="369.0" styleClass="login-button" text="SIgn In" onAction="#login">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
       </Button>
-      <TextField layoutX="112.0" layoutY="169.0" prefHeight="33.0" prefWidth="369.0" styleClass="input-field" promptText="prova@email.com"/>
-      <PasswordField layoutX="116.0" layoutY="244.0" prefHeight="33.0" prefWidth="369.0" styleClass="input-field" promptText="Password" />
+      <TextField fx:id="emailLogin" layoutX="112.0" layoutY="169.0" prefHeight="33.0" prefWidth="369.0" styleClass="input-field" promptText="prova@email.com"/>
+      <PasswordField fx:id="passwordLogin" layoutX="116.0" layoutY="244.0" prefHeight="33.0" prefWidth="369.0" styleClass="input-field" promptText="Password" />
       <Label layoutX="116.0" layoutY="220.0" text="Password" />
    </children>
 </AnchorPane>

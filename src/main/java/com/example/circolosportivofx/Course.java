@@ -1,3 +1,7 @@
+package com.example.circolosportivofx;
+
+import java.util.ArrayList;
+
 /**
  * The type Course.
  */
@@ -13,5 +17,13 @@ public final class Course extends Activity
     public Course(String type, String name)
     {
         super(type, name);
+    }
+
+    public  Course(String type, String name,  ArrayList<Member> subscribers)
+    {
+        super(type, name, subscribers);
+    }
+    {
+
     }
 }

@@ -1,3 +1,5 @@
+package com.example.circolosportivofx;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +15,7 @@ public abstract class Activity
     /**
      * The Subscribers.
      */
-    protected ArrayList<Person> subscribers;
+    protected ArrayList<Member> subscribers;
     /**
      * The Name.
      */
@@ -28,9 +30,17 @@ public abstract class Activity
     public Activity(String type, String name)
     {
         this.type = type;
-        this.subscribers = new ArrayList<Person>();
+        this.subscribers = new ArrayList<Member>();
         this.name = name ;
     }
+
+    public Activity(String type, String name, ArrayList<Member> subscribers)
+    {
+        this.type = type;
+        this.subscribers = new ArrayList<>(subscribers);
+        this.name = name ;
+    }
+
 
     /**
      * Gets type.
@@ -57,7 +67,7 @@ public abstract class Activity
      *
      * @return the subscribers
      */
-    public ArrayList<Person> getSubscribers()
+    public ArrayList<Member> getSubscribers()
     {
         return subscribers;
     }
@@ -67,7 +77,7 @@ public abstract class Activity
      *
      * @param subscribers the subscribers
      */
-    public void setSubscribers(ArrayList<Person> subscribers)
+    public void setSubscribers(ArrayList<Member> subscribers)
     {
         this.subscribers = subscribers;
     }
@@ -96,7 +106,7 @@ public abstract class Activity
      *
      * @param person per differenziare tra socio e admin si puo fare un controllo con instanceof per ora aggiungo semplicemente la persona alla lista dei subscribers
      */
-    public void addSubscriber(Person person)
+    public void addSubscriber(Member person)
     {
         if (!subscribers.contains(person))
             subscribers.add(person);

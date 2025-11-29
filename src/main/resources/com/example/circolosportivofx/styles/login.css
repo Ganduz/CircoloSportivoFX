@@ -9,7 +9,7 @@
 }
 
 .input-field {
-    -fx-background-color: #white;
+    -fx-background-color: white;
     -fx-text-fill: black;
     -fx-background-radius: 8;
     -fx-padding: 0 10 0 10;
