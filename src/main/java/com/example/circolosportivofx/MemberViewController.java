@@ -52,6 +52,8 @@ public class MemberViewController implements Initializable {
             Activity activity = Data.getInstance().getActivityByName(comboUnsubscribe.getSelectionModel().getSelectedItem());
             activity.removeSubscriber(Data.getInstance().getLoggedUser());
             populateComboBox();
+            Data.getInstance().writeOutput("User " + Data.getInstance().getLoggedUser().getName() + " " + Data.getInstance().getLoggedUser().getSurname() + " unsubscribed from activity " + activity.getName());
+            Data.getInstance().writeOutput("Activity List : " + activity.getSubscribers());
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Unsubscribe Successfully");
             alert.setContentText("You have successfully unsubscribed from " + activity.getName() + "!");
@@ -65,6 +67,8 @@ public class MemberViewController implements Initializable {
             Activity activity = Data.getInstance().getActivityByName(comboSubscribe.getSelectionModel().getSelectedItem());
             activity.addSubscriber(Data.getInstance().getLoggedUser());
             populateComboBox();
+            Data.getInstance().writeOutput("User " + Data.getInstance().getLoggedUser().getName() + " " + Data.getInstance().getLoggedUser().getSurname() + " subscribed to activity " + activity.getName());
+            Data.getInstance().writeOutput("Activity List : " + activity.getSubscribers());
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Subscription Successful");
             alert.setContentText("You have successfully subscribed to " + activity.getName() + "!");

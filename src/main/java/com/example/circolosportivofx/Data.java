@@ -310,4 +310,23 @@ public class Data {
         }
         return null;
     }
+
+
+    public void writeOutput(String message) {
+        try (FileWriter writer = new FileWriter("output.txt", true)) {
+            writer.write(message + System.lineSeparator());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public void endOutput() {
+        try (FileWriter writer = new FileWriter("output.txt", true)) {
+            writer.write("----- End of Session -----" + System.lineSeparator());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

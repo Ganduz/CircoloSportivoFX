@@ -3,14 +3,14 @@
 }
 
 .title {
-    -fx-text-fill: black;
+    -fx-text-fill: "#232422";
     -fx-font-size: 24px;
     -fx-font-weight: bold;
 }
 
 .input-field {
     -fx-background-color: white;
-    -fx-text-fill: black;
+    -fx-text-fill: "#232422";
     -fx-background-radius: 8;
     -fx-padding: 0 10 0 10;
     -fx-border-color: #333;
@@ -18,28 +18,21 @@
 }
 
 .input-field:focused {
-    -fx-border-color: black;
+    -fx-border-color: "#232422";
 }
 
 .login-button {
-    -fx-background-color: black;
+    -fx-background-color: "#232422";
     -fx-text-fill: white;
     -fx-background-radius: 8;
-    -fx-font-weight: bold;
 }
 
 .login-button:hover {
-    -fx-background-color: white;
-    -fx-text-fill: black;
-    -fx-border-color: black;
-    -fx-border-width: 2;
-    -fx-border-radius: 8;
+    -fx-background-color: #353635;
 }
 
-.forgot-link {
-    -fx-text-fill: #bbbbbb;
-}
 
-.forgot-link:hover {
-    -fx-text-fill: white;
+/* Pressed */
+.login-button:pressed {
+    -fx-background-color: #1b1c1b
 }

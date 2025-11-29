@@ -18,17 +18,19 @@ public class CircoloSportivoApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(CircoloSportivoApplication.class.getResource("views/login-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         scene.getStylesheets().add(
-                Objects.requireNonNull(getClass().getResource("styles/login.css")).toExternalForm()
+                Objects.requireNonNull(getClass().getResource("styles/login-view.css")).toExternalForm()
         );
 
-
-        stage.show();
+        stage.centerOnScreen();
         stage.setTitle("");
         stage.setScene(scene);
-
+        stage.resizableProperty().setValue(false);
+        stage.show();
         stage.setOnCloseRequest(e -> {
             //data.saveUsers();
             //data.saveActivities();
+            Data.getInstance().endOutput();
+            System.out.println("Application closed.");
         });
 
 
