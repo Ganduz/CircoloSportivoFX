@@ -3,10 +3,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="root-pane" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="520.0" prefWidth="600.0" styleClass="root-pane" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.circolosportivofx.AdminController">
    <children>
       <Label alignment="CENTER" layoutX="84.0" layoutY="54.0" prefHeight="59.0" prefWidth="433.0" styleClass="title" text="Benvenuto Admin " />
-      <Button layoutX="84.0" layoutY="159.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="433.0" styleClass="custom-button" text="Subsribe/Unsubscribe Activity" />
-      <Button layoutX="84.0" layoutY="274.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="433.0" styleClass="custom-button" text="Manage Members" />
+      <Button fx:id="manageActivitiesButton" layoutX="84.0" layoutY="276.0" mnemonicParsing="false" onAction="#manageActivitiesButtonAction" prefHeight="68.0" prefWidth="433.0" styleClass="custom-button" text="Manage Activity" />
+      <Button fx:id="manageMembersButton" layoutX="84.0" layoutY="382.0" mnemonicParsing="false" onAction="#manageMembersButtonAction" prefHeight="68.0" prefWidth="433.0" styleClass="custom-button" text="Manage Members" />
+      <Button fx:id="subscribeActivityButton" layoutX="84.0" layoutY="166.0" mnemonicParsing="false" onAction="#subscribeActivityButtonAction" prefHeight="68.0" prefWidth="433.0" styleClass="custom-button" text="Subscribe/Unsubscribe Activity" />
    </children>
 </AnchorPane>

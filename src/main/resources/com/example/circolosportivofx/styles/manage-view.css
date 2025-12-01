@@ -10,6 +10,7 @@
     -fx-font-size: 26px;
     -fx-font-weight: bold;
     -fx-font-family: "JetBrains Mono";
+    -fx-alignment: center;
 }
 
 .input-field {
@@ -38,4 +39,11 @@
     -fx-border-color: black;
     -fx-border-width: 2;
     -fx-border-radius: 8;
+}
+
+.error-message {
+    -fx-alignment: center;
+    -fx-text-fill: red;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
 }

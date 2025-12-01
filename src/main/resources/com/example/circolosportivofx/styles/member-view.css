@@ -49,3 +49,8 @@
 .custom-button:pressed {
     -fx-background-color: #1b1c1b
 }
+
+.result-label {
+    -fx-text-fill: #333;
+    -fx-font-size: 14px;
+}

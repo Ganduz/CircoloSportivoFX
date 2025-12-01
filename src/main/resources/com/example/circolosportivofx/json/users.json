@@ -32,6 +32,12 @@
       "surname": "Brown",
       "email": "davidebrown@libero.it",
       "password": "password3"
+    },
+    {
+      "name": "member",
+      "surname": "member",
+      "email": "member",
+        "password": "member"
     }
   ]
 }

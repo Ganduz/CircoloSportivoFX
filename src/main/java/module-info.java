@@ -14,6 +14,7 @@ module com.example.circolosportivofx {
     requires annotations;
     requires javafx.graphics;
     requires org.json;
+    requires javafx.base;
 
     opens com.example.circolosportivofx to javafx.fxml;
     exports com.example.circolosportivofx;

@@ -178,7 +178,6 @@ public class Data {
 
         for (Activity a : activities) {
             JsonObject obj = new JsonObject();
-            obj.addProperty("type", a.getType());
             obj.addProperty("name", a.getName());
 
             // Lista partecipanti divisa in admins e members
@@ -283,9 +282,9 @@ public class Data {
                     }
 
                     if(type.equals("competition"))
-                        activities.add(new Competition(type, name, participants));
+                        activities.add(new Competition(name, participants));
                     else
-                        activities.add(new Course(type, name, participants));
+                        activities.add(new Course(name, participants));
                 }
             }
 
@@ -310,7 +309,6 @@ public class Data {
         }
         return null;
     }
-
 
     public void writeOutput(String message) {
         try (FileWriter writer = new FileWriter("output.txt", true)) {

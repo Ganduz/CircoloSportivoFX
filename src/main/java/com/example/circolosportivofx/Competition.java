@@ -11,17 +11,21 @@ public final class Competition extends Activity
     /**
      * Instantiates a new Competition.
      *
-     * @param type the type
      * @param name the name
      */
-    public Competition(String type, String name)
+    public Competition(String name)
     {
-        super(type, name);
+        super(name);
     }
 
-    public Competition(String type, String name,  ArrayList<Member> subscribers)
+    public Competition(String name,  ArrayList<Member> subscribers)
     {
-        super(type, name, subscribers);
+        super(name, subscribers);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
     }
 
 }

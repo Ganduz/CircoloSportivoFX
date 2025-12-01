@@ -11,19 +11,20 @@ public final class Course extends Activity
     /**
      * Instantiates a new Course.
      *
-     * @param type the type
      * @param name the name
      */
-    public Course(String type, String name)
+    public Course(String name)
     {
-        super(type, name);
+        super(name);
     }
 
-    public  Course(String type, String name,  ArrayList<Member> subscribers)
+    public  Course(String name,  ArrayList<Member> subscribers)
     {
-        super(type, name, subscribers);
+        super(name, subscribers);
     }
-    {
 
+    @Override
+    public String toString() {
+        return super.toString();
     }
 }

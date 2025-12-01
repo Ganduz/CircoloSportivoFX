@@ -113,13 +113,14 @@ public abstract class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
-                "name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                '}';
+        return  name + " " + surname;
     }
 
+    public Boolean isEqual(Person person) {
+        return this.name.equals(person.getName()) &&
+                this.surname.equals(person.getSurname()) &&
+                this.email.equals(person.getEmail()) &&
+                this.password.equals(person.getPassword());
+    }
 
 }

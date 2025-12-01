@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="503.0" prefWidth="616.0" styleClass="root-pane" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.circolosportivofx.ManageActivityController">
+
+    <children>
+
+        <Label layoutX="81.0" layoutY="32.0" prefHeight="17.0" prefWidth="454.0" styleClass="title" text="Add Activity" />
+        <TextField fx:id="nameField" layoutX="81.0" layoutY="78.0" prefHeight="40" prefWidth="454.0" promptText="Name" styleClass="input-field" />
+        <Button fx:id="creaButton" layoutX="81.0" layoutY="201.0" onAction="#createActivity" prefHeight="40" prefWidth="454.0" styleClass="create-button" text="Create Activitiy" />
+        <Label layoutX="81.0" layoutY="329.0" prefHeight="17.0" prefWidth="454.0" styleClass="title" text="Remove Activities" />
+        <ComboBox fx:id="activitiesComboBox" layoutX="81.0" layoutY="388.0" prefHeight="53.0" prefWidth="229.0" />
+        <Button layoutX="369.0" layoutY="388.0" mnemonicParsing="false" onAction="#removeActivity" prefHeight="53.0" prefWidth="157.0" text="Remove Activity" />
+        <RadioButton fx:id="radioCourse" layoutX="167.0" layoutY="152.0" mnemonicParsing="false" text="Course" />
+        <RadioButton fx:id="radioCompetition" layoutX="341.0" layoutY="152.0" mnemonicParsing="false" text="Competition" />
+        <Label fx:id="infoLabel" layoutX="81.0" layoutY="280.0" prefHeight="17.0" prefWidth="454.0" styleClass="error-message" />
+
+    </children>
+
+</AnchorPane>

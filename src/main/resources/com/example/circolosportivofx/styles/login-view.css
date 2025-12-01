@@ -36,3 +36,9 @@
 .login-button:pressed {
     -fx-background-color: #1b1c1b
 }
+
+
+.error-message {
+    -fx-text-fill: red;
+    -fx-alignment: center;
+}

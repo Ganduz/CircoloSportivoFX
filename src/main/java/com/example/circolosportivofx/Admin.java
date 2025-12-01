@@ -146,5 +146,10 @@ public class Admin extends Member {
         member.setPassword(password);
     }
 
+    @Override
+    public String toString() {
+        return "(Admin) " + name + " " + surname;
+    }
+
 
 }

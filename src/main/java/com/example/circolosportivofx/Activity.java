@@ -9,10 +9,6 @@ import java.util.List;
 public abstract class Activity
 {
     /**
-     * The Type.
-     */
-    protected String type;
-    /**
      * The Subscribers.
      */
     protected ArrayList<Member> subscribers;
@@ -24,42 +20,18 @@ public abstract class Activity
     /**
      * Instantiates a new Activity.
      *
-     * @param type the type
      * @param name the name
      */
-    public Activity(String type, String name)
+    public Activity(String name)
     {
-        this.type = type;
         this.subscribers = new ArrayList<Member>();
         this.name = name ;
     }
 
-    public Activity(String type, String name, ArrayList<Member> subscribers)
+    public Activity(String name, ArrayList<Member> subscribers)
     {
-        this.type = type;
         this.subscribers = new ArrayList<>(subscribers);
         this.name = name ;
-    }
-
-
-    /**
-     * Gets type.
-     *
-     * @return the type
-     */
-    public String getType()
-    {
-        return type;
-    }
-
-    /**
-     * Sets type.
-     *
-     * @param type the type
-     */
-    public void setType(String type)
-    {
-        this.type = type;
     }
 
     /**
@@ -122,5 +94,8 @@ public abstract class Activity
         subscribers.remove(person);
     }
 
-
+    @Override
+    public String toString() {
+        return name;
+    }
 }

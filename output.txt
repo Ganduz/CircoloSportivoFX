@@ -1,0 +1,260 @@
+Login successful for: admin admin
+----- End of Session -----
+Login successful for: admin admin
+----- End of Session -----
+Login successful for: admin admin
+----- End of Session -----
+Login successful for: admin admin
+----- End of Session -----
+Login successful for: admin admin
+----- End of Session -----
+Login successful for: member member
+User member member subscribed to activity Tennis
+Activity List : [Person{name='Alice', surname='Smith', email='alice', password='alice'}, Person{name='Bob', surname='Johnson', email='bob', password='bob'}, Person{name='member', surname='member', email='member', password='member'}]
+User member member subscribed to activity Nuoto
+Activity List : [Person{name='Carol', surname='Williams', email='carol', password='carol'}, Person{name='member', surname='member', email='member', password='member'}]
+User member member unsubscribed from activity Tennis
+Activity List : [Person{name='Alice', surname='Smith', email='alice', password='alice'}, Person{name='Bob', surname='Johnson', email='bob', password='bob'}]
+User member member unsubscribed from activity Nuoto
+Activity List : [Person{name='Carol', surname='Williams', email='carol', password='carol'}]
+----- End of Session -----
+Login successful for: admin admin
+----- End of Session -----
+----- End of Session -----
+----- End of Session -----
+Login Failed: Incorrect email or password
+Login Failed: Incorrect email or password
+Login Failed: Incorrect email or password
+Login Failed: Incorrect email or password
+----- End of Session -----
+Login Failed: Incorrect email or password
+Login Failed: Incorrect email or password
+Login successful for: admin admin
+Admin access granted to: admin admin
+----- End of Session -----
+Login Failed: Incorrect email or password
+Login successful for: admin admin
+Admin access granted to: admin admin
+----- End of Session -----
+Admin access granted to: admin admin
+----- End of Session -----
+Admin access granted to: admin admin
+----- End of Session -----
+Admin access granted to: admin admin
+----- End of Session -----
+Login Failed: Incorrect email or password
+Login Failed: Incorrect email or password
+Login Failed: Incorrect email or password
+Login Failed: Incorrect email or password
+Login Failed: Incorrect email or password
+Admin access granted to: admin admin
+----- End of Session -----
+Admin access granted to: admin admin
+----- End of Session -----
+Admin access granted to: admin admin
+----- End of Session -----
+Admin access granted to: admin admin
+----- End of Session -----
+Admin access granted to: admin admin
+----- End of Session -----
+Admin access granted to: admin admin
+----- End of Session -----
+Admin access granted to: admin admin
+----- End of Session -----
+----- End of Session -----
+Login Failed: Incorrect email or password
+Admin access granted to: admin admin
+----- End of Session -----
+Login Failed: Incorrect email or password
+Admin access granted to: admin admin
+----- End of Session -----
+Login Failed: Incorrect email or password
+Login Failed: Incorrect email or password
+Login Failed: Incorrect email or password
+Login Failed: Incorrect email or password
+Login Failed: Incorrect email or password
+----- End of Session -----
+Login Failed: Incorrect email or password
+Admin access granted to: admin admin
+----- End of Session -----
+Admin access granted to: admin admin
+----- End of Session -----
+Admin access granted to: admin admin
+----- End of Session -----
+Admin access granted to: admin admin
+----- End of Session -----
+Admin access granted to: admin admin
+Admin access granted to: admin admin
+----- End of Session -----
+Admin access granted to: admin admin
+----- End of Session -----
+Admin access granted to: admin admin
+----- End of Session -----
+Admin access granted to: admin admin
+Admin prova prova created by Admin admin admin
+Admin prova prova created by Admin admin admin
+Admin access granted to: admin admin
+Admin prova prova created by Admin admin admin
+Admin prova prova created by Admin admin admin
+Member prova prova created by Admin admin admin
+Admin prova prova created by Admin admin admin
+----- End of Session -----
+----- End of Session -----
+Admin access granted to: admin admin
+----- End of Session -----
+Admin access granted to: admin admin
+Admin prova prova created by Admin admin admin
+----- End of Session -----
+Admin access granted to: admin admin
+Member prova prova created by Admin admin admin
+Admin prova prova created by Admin admin admin
+Member prova prova created by Admin admin admin
+----- End of Session -----
+----- End of Session -----
+Admin access granted to: admin admin
+Member prova prova created by Admin admin admin
+Admin prova prova created by Admin admin admin
+Member David Brown removed by Admin admin admin
+Member Bob Johnson removed by Admin admin admin
+Member admin admin removed by Admin admin admin
+Member Carol Williams removed by Admin admin admin
+Member member member removed by Admin admin admin
+Member prova prova removed by Admin admin admin
+Member Alice Smith removed by Admin admin admin
+Member prova prova removed by Admin admin admin
+Admin prova prova created by Admin admin admin
+Member prova prova removed by Admin admin admin
+Admin prova prova created by Admin admin admin
+Member prova prova removed by Admin admin admin
+Admin prova prova created by Admin admin admin
+Member prova prova removed by Admin admin admin
+Admin asdsadas prova created by Admin admin admin
+Member asdsadas prova removed by Admin admin admin
+----- End of Session -----
+Admin access granted to: admin admin
+----- End of Session -----
+Admin access granted to: admin admin
+----- End of Session -----
+Admin access granted to: admin admin
+----- End of Session -----
+Admin access granted to: admin admin
+----- End of Session -----
+Admin access granted to: admin admin
+User admin admin subscribed to activity Nuoto
+Activity List : [(Admin) Carol Williams, (Admin) admin admin]
+User admin admin unsubscribed from activity Nuoto
+Activity List : [(Admin) Carol Williams]
+----- End of Session -----
+Admin access granted to: admin admin
+Member Carol Williams removed by Admin admin admin
+Member Bob Johnson removed by Admin admin admin
+Member member member removed by Admin admin admin
+Member David Brown removed by Admin admin admin
+Member Alice Smith removed by Admin admin admin
+----- End of Session -----
+Admin access granted to: admin admin
+Member Bob Johnson removed by Admin admin admin
+Member member member removed by Admin admin admin
+Member David Brown removed by Admin admin admin
+Member Carol Williams removed by Admin admin admin
+Member Alice Smith removed by Admin admin admin
+----- End of Session -----
+Admin access granted to: admin admin
+User admin admin subscribed to activity Tennis
+Activity List : [(Admin) Alice Smith, (Member) Bob Johnson, (Admin) admin admin]
+User admin admin unsubscribed from activity Tennis
+Activity List : [(Admin) Alice Smith, (Member) Bob Johnson]
+User admin admin subscribed to activity Tennis
+Activity List : [(Admin) Alice Smith, (Member) Bob Johnson, (Admin) admin admin]
+User admin admin subscribed to activity Nuoto
+Activity List : [(Admin) Carol Williams, (Admin) admin admin]
+User admin admin unsubscribed from activity Tennis
+Activity List : [(Admin) Alice Smith, (Member) Bob Johnson]
+User admin admin unsubscribed from activity Nuoto
+Activity List : [(Admin) Carol Williams]
+User admin admin subscribed to activity Tennis
+Activity List : [(Admin) Alice Smith, (Member) Bob Johnson, (Admin) admin admin]
+User admin admin subscribed to activity Nuoto
+Activity List : [(Admin) Carol Williams, (Admin) admin admin]
+User admin admin subscribed to activity Pallavolo
+Activity List : [(Admin) David Brown, (Admin) admin admin]
+----- End of Session -----
+Admin access granted to: admin admin
+User admin admin subscribed to activity Tennis
+Activity List : [(Admin) Alice Smith, (Member) Bob Johnson, (Admin) admin admin]
+User admin admin unsubscribed from activity Tennis
+Activity List : [(Admin) Alice Smith, (Member) Bob Johnson]
+----- End of Session -----
+Admin access granted to: admin admin
+----- End of Session -----
+Admin access granted to: admin admin
+Create Member Error: there are empty fields
+Create Member Error: there are empty fields
+Create Member Error: there are empty fields
+Create Member Error: there are empty fields
+Create Member Error: there are empty fields
+Create Member Error: there are empty fields
+Create Member Error: there are empty fields
+Admin asd asd created by Admin admin admin
+[(Admin) Alice Smith, (Admin) admin admin, (Member) Bob Johnson, (Member) Carol Williams, (Member) David Brown, (Member) member member, (Admin) asd asd]
+Member asd asd removed by Admin admin admin
+Member asd asd created by Admin admin admin
+[(Admin) Alice Smith, (Admin) admin admin, (Member) Bob Johnson, (Member) Carol Williams, (Member) David Brown, (Member) member member, (Member) asd asd]
+Create Member Error: email asd is already in use
+Create Member Error: email asd is already in use
+Create Member Error: email asd is already in use
+Create Member Error: email asd is already in use
+Create Member Error: email asd is already in use
+Create Member Error: email asd is already in use
+----- End of Session -----
+----- End of Session -----
+Admin access granted to: admin admin
+Admin access granted to: admin admin
+Course Spuzzo created by Admin admin admin
+[(Admin) Alice Smith, (Admin) admin admin, (Member) Bob Johnson, (Member) Carol Williams, (Member) David Brown, (Member) member member]
+Create Activity Error: an activity with name Spuzzo already exists
+Create Activity Error: an activity with name Spuzzo already exists
+Create Activity Error: an activity with name Spuzzo already exists
+Create Activity Error: an activity with name Spuzzo already exists
+Create Activity Error: an activity with name Spuzzo already exists
+Create Activity Error: an activity with name Spuzzo already exists
+----- End of Session -----
+Admin access granted to: admin admin
+Course prova created by Admin admin admin
+[(Admin) Alice Smith, (Admin) admin admin, (Member) Bob Johnson, (Member) Carol Williams, (Member) David Brown, (Member) member member]
+Create Activity Error: an activity with name prova already exists
+Create Activity Error: an activity with name prova already exists
+Create Activity Error: an activity with name prova already exists
+Create Activity Error: an activity with name prova already exists
+Create Activity Error: an activity with name prova already exists
+----- End of Session -----
+Admin access granted to: admin admin
+Create Activity Error: an activity with name Tennis already exists
+Create Activity Error: an activity with name Tennis already exists
+Create Activity Error: an activity with name Tennis already exists
+Create Activity Error: an activity with name Tennis already exists
+Create Activity Error: an activity with name Tennis already exists
+Create Activity Error: an activity with name Tennis already exists
+Create Activity Error: an activity with name Tennis already exists
+Create Activity Error: an activity with name Tennis already exists
+Course tennis created by Admin admin admin
+[(Admin) Alice Smith, (Admin) admin admin, (Member) Bob Johnson, (Member) Carol Williams, (Member) David Brown, (Member) member member]
+----- End of Session -----
+Admin access granted to: admin admin
+Create Activity Error: an activity with name tennis already exists
+Create Activity Error: an activity with name tennis already exists
+Activity Nuoto removed by Admin admin admin
+Course Nuoto created by Admin admin admin
+[(Admin) Alice Smith, (Admin) admin admin, (Member) Bob Johnson, (Member) Carol Williams, (Member) David Brown, (Member) member member]
+----- End of Session -----
+Login Failed: Incorrect email or password
+Admin access granted to: admin admin
+----- End of Session -----
+Admin access granted to: admin admin
+----- End of Session -----
+Admin access granted to: admin admin
+----- End of Session -----
+Admin access granted to: admin admin
+----- End of Session -----
+Member access granted to: member member
+----- End of Session -----

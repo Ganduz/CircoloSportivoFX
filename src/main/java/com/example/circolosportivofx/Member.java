@@ -43,4 +43,10 @@ public class Member extends Person {
         activity.removeSubscriber(this);
     }
 
+    @Override
+    public String toString() {
+        return "(Member) " + super.toString();
+    }
+
+
 }
