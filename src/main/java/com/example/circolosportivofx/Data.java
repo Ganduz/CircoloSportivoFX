@@ -327,4 +327,12 @@ public class Data {
         }
     }
 
+    public void startOutput() {
+        try (FileWriter writer = new FileWriter("output.txt")) {
+            writer.write("----- Start of Session -----" + System.lineSeparator());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

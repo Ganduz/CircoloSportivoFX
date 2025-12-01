@@ -13,7 +13,7 @@ public class CircoloSportivoApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         Data data = Data.getInstance();
-
+        Data.getInstance().startOutput();
 
         FXMLLoader fxmlLoader = new FXMLLoader(CircoloSportivoApplication.class.getResource("views/login-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
