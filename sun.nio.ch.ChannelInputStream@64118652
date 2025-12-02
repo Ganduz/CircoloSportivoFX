@@ -1,0 +1,48 @@
+{
+    "members": [
+        {
+            "password": ["password1"],
+            "surname": ["Johnson"],
+            "name": ["Bob"],
+            "email": ["bobjohnson@yahoo.com"]
+        },
+        {
+            "password": ["password2"],
+            "surname": ["Williams"],
+            "name": ["Carol"],
+            "email": ["carolwilliams@hotmail.com"]
+        },
+        {
+            "password": ["password3"],
+            "surname": ["Brown"],
+            "name": ["David"],
+            "email": ["davidebrown@libero.it"]
+        },
+        {
+            "password": ["member"],
+            "surname": ["member"],
+            "name": ["member"],
+            "email": ["member"]
+        },
+        {
+            "password": ["prova"],
+            "surname": ["prova"],
+            "name": ["prova"],
+            "email": ["prova"]
+        }
+    ],
+    "admins": [
+        {
+            "password": ["admin"],
+            "surname": ["Smith"],
+            "name": ["Alice"],
+            "email": ["alicesmithadmin@gmail.com"]
+        },
+        {
+            "password": ["admin"],
+            "surname": ["admin"],
+            "name": ["admin"],
+            "email": ["admin"]
+        }
+    ]
+}merda

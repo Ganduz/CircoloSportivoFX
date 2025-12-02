@@ -34,7 +34,7 @@ public class LoginController {
 
         //labelResult.setText("");
         for (Member member : Data.getInstance().getMembers()) {
-            if (member.getEmail().equals(email) && member.getPassword().equals(password)) {
+            if (member.getEmail().equals(email) && member.getPassword().equals(SHA256Hashing.generateSHA256Hash(password))) {
                 // Successful login
                 Data.getInstance().setLoggedUser(member);
                 Scene scene;

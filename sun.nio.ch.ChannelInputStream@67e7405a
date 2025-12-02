@@ -1,0 +1,45 @@
+{
+    "courses": [
+        {
+            "name": "Tennis",
+            "participants": {
+                "members": [{
+                    "password": "bob",
+                    "surname": "Johnson",
+                    "name": "Bob",
+                    "email": "bob"
+                }],
+                "admins": [{
+                    "password": "alice",
+                    "surname": "Smith",
+                    "name": "Alice",
+                    "email": "alice"
+                }]
+            }
+        },
+        {
+            "name": "Nuoto",
+            "participants": {
+                "members": [],
+                "admins": [{
+                    "password": "carol",
+                    "surname": "Williams",
+                    "name": "Carol",
+                    "email": "carol"
+                }]
+            }
+        }
+    ],
+    "competitions": [{
+        "name": "Pallavolo",
+        "participants": {
+            "members": [],
+            "admins": [{
+                "password": "david",
+                "surname": "Brown",
+                "name": "David",
+                "email": "david"
+            }]
+        }
+    }]
+}

@@ -27,8 +27,8 @@ public class CircoloSportivoApplication extends Application {
         stage.resizableProperty().setValue(false);
         stage.show();
         stage.setOnCloseRequest(e -> {
-            //data.saveUsers();
-            //data.saveActivities();
+            data.saveUsers();
+            data.saveActivities();
             Data.getInstance().endOutput();
             System.out.println("Application closed.");
         });

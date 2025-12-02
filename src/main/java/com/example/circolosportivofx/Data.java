@@ -1,15 +1,10 @@
 package com.example.circolosportivofx;
 
-import com.google.gson.*;
-import javafx.beans.InvalidationListener;
-import javafx.collections.FXCollections;
-import javafx.collections.ListChangeListener;
-import javafx.collections.ObservableList;
-import org.jetbrains.annotations.NotNull;
 import org.json.*;
-
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.*;
 
 /**
@@ -18,8 +13,8 @@ import java.util.*;
 public class Data {
     private static Data instance = null;
 
-    private final  String filepathUsers = "json/users.json";
-    private final  String filepathActivities = "json/activities.json";
+    private final  String filepathUsers = "data/json/users.json";
+    private final  String filepathActivities = "data/json/activities.json";
     private ArrayList<Member> members = new ArrayList<>();
     private  ArrayList<Activity> activities = new ArrayList<>();
     private Member loggedUser = null;
@@ -76,25 +71,10 @@ public class Data {
 
 
     private void loadUsers() {
-        try {
-            // Legge tutto il JSON come oggetto unico
-            //JsonObject root = JsonParser.parseReader(new FileReader(filepathUsers)).getAsJsonObject();
-            InputStream inputStream = getClass().getResourceAsStream(filepathUsers);
-            if (inputStream == null) {
-                throw new FileNotFoundException("File JSON non trovato!");
-            }
-
-            // Usa InputStreamReader invece di FileReader
-
-            //JSONObject root = JsonParser.parseReader(new InputStreamReader(inputStream).get);
-            //System.out.println(root);
+        try (InputStream inputStream = Files.newInputStream(Paths.get(filepathUsers));){
             String jsonText = new String(inputStream.readAllBytes(), StandardCharsets.UTF_8);
 
-            // Parsing con org.json
             JSONObject root = new JSONObject(jsonText);
-
-
-
 
             // --- ADMINS ---
             JSONArray adminArray = root.getJSONArray("admins");
@@ -139,31 +119,29 @@ public class Data {
     }
 
     public void saveUsers() {
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-
-        JsonObject root = new JsonObject();
-        JsonArray adminsArray = new JsonArray();
-        JsonArray membersArray = new JsonArray();
+        JSONObject root = new JSONObject();
+        JSONArray adminsArray = new JSONArray();
+        JSONArray membersArray = new JSONArray();
 
         for (Member u : members) {
-            JsonObject obj = new JsonObject();
-            obj.addProperty("name", u.getName());
-            obj.addProperty("surname", u.getSurname());
-            obj.addProperty("email", u.getEmail());
-            obj.addProperty("password", u.getPassword());
+            JSONObject obj = new JSONObject();
+            obj.put("name", u.getName());
+            obj.put("surname", u.getSurname());
+            obj.put("email", u.getEmail());
+            obj.put("password", u.getPassword());
 
             if (u instanceof Admin) {
-                adminsArray.add(obj);
+                adminsArray.put(obj);
             } else {
-                membersArray.add(obj);
+                membersArray.put(obj);
             }
         }
 
-        root.add("admins", adminsArray);
-        root.add("members", membersArray);
+        root.put("admins", adminsArray);
+        root.put("members", membersArray);
 
         try (FileWriter writer = new FileWriter(filepathUsers)) {
-            gson.toJson(root, writer);
+            writer.write(root.toString(4));
             System.out.println("Utenti salvati correttamente su " + filepathUsers);
         } catch (IOException e) {
             e.printStackTrace();
@@ -171,50 +149,49 @@ public class Data {
     }
 
     public void saveActivities() {
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        JsonObject root = new JsonObject();
-        JsonArray coursesArray = new JsonArray();
-        JsonArray competitionsArray = new JsonArray();
+        JSONObject root = new JSONObject();
+        JSONArray coursesArray = new JSONArray();
+        JSONArray competitionsArray = new JSONArray();
 
         for (Activity a : activities) {
-            JsonObject obj = new JsonObject();
-            obj.addProperty("name", a.getName());
+            JSONObject obj = new JSONObject();
+            obj.put("name", a.getName());
 
             // Lista partecipanti divisa in admins e members
-            JsonObject participantsObj = new JsonObject();
-            JsonArray adminsArray = new JsonArray();
-            JsonArray membersArray = new JsonArray();
+            JSONObject participantsObj = new JSONObject();
+            JSONArray adminsArray = new JSONArray();
+            JSONArray membersArray = new JSONArray();
 
             for (Member m : a.getSubscribers()) {
-                JsonObject memberObj = new JsonObject();
-                memberObj.addProperty("name", m.getName());
-                memberObj.addProperty("surname", m.getSurname());
-                memberObj.addProperty("email", m.getEmail());
-                memberObj.addProperty("password", m.getPassword());
+                JSONObject memberObj = new JSONObject();
+                memberObj.put("name", m.getName());
+                memberObj.put("surname", m.getSurname());
+                memberObj.put("email", m.getEmail());
+                memberObj.put("password", m.getPassword());
 
                 if (m instanceof Admin) {
-                    adminsArray.add(memberObj);
+                    adminsArray.put(memberObj);
                 } else {
-                    membersArray.add(memberObj);
+                    membersArray.put(memberObj);
                 }
             }
 
-            participantsObj.add("admins", adminsArray);
-            participantsObj.add("members", membersArray);
-            obj.add("participants", participantsObj);
+            participantsObj.put("admins", adminsArray);
+            participantsObj.put("members", membersArray);
+            obj.put("subscribers", participantsObj);
 
             if (a instanceof Course) {
-                coursesArray.add(obj);
+                coursesArray.put(obj);
             } else if (a instanceof Competition) {
-                competitionsArray.add(obj);
+                competitionsArray.put(obj);
             }
         }
 
-        root.add("courses", coursesArray);
-        root.add("competitions", competitionsArray);
+        root.put("courses", coursesArray);
+        root.put("competitions", competitionsArray);
 
         try (FileWriter writer = new FileWriter(filepathActivities)) {
-            gson.toJson(root, writer);
+            writer.write(root.toString(4));
             System.out.println("Attività salvate correttamente in " + filepathActivities);
         } catch (IOException e) {
             e.printStackTrace();
@@ -222,12 +199,8 @@ public class Data {
     }
 
     public void loadActivities() {
-        try {
+        try(InputStream inputStream = Files.newInputStream(Paths.get(filepathActivities));) {
             //JsonObject root = JsonParser.parseReader(new FileReader(filepathActivities)).getAsJsonObject();
-            InputStream inputStream = getClass().getResourceAsStream(filepathActivities);
-            if (inputStream == null) {
-                throw new FileNotFoundException("File JSON non trovato!");
-            }
 
             // Usa InputStreamReader invece di FileReader
             String jsonText = new String(inputStream.readAllBytes(), StandardCharsets.UTF_8);
@@ -236,57 +209,13 @@ public class Data {
                 System.out.println("File JSON vuoto, niente da caricare.");
                 return;
             }
-
             JSONObject root = new JSONObject(jsonText);
 
+            JSONArray competitionsArray = root.getJSONArray("competitions");
+            JSONArray coursesArray = root.getJSONArray("courses");
 
-            JSONArray activitiesArray = root.getJSONArray("activities");
-            System.out.println(activitiesArray);
-            if (activitiesArray != null) {
-                for (int i = 0; i < activitiesArray.length(); i++) {
-                    //System.out.println(i);
-                    JSONObject obj = activitiesArray.getJSONObject(i);
-                    String name = obj.getString("name");
-                    String type = obj.getString("type");
-
-                    JSONObject subscribersObj = obj.getJSONObject("subscribers");
-                    ArrayList<Member> participants = new ArrayList<>();
-
-                    // Admins
-                    if(!subscribersObj.isNull("admins")) {
-                        JSONArray admins = subscribersObj.getJSONArray("admins");
-                        for (int j = 0; j < admins.length(); j++) {
-                            JSONObject m = admins.getJSONObject(j);
-                            participants.add(new Admin(
-                                    m.getString("name"),
-                                    m.getString("surname"),
-                                    m.getString("email"),
-                                    m.getString("password")
-                            ));
-                        }
-                    }
-
-
-                    // Members
-                    if (!subscribersObj.isNull("members")) {
-                        JSONArray members = subscribersObj.getJSONArray("members");
-                        for (int j = 0; j < members.length(); j++) {
-                            JSONObject m = members.getJSONObject(j);
-                            participants.add(new Member(
-                                    m.getString("name"),
-                                    m.getString("surname"),
-                                    m.getString("email"),
-                                    m.getString("password")
-                            ));
-                        }
-                    }
-
-                    if(type.equals("competition"))
-                        activities.add(new Competition(name, participants));
-                    else
-                        activities.add(new Course(name, participants));
-                }
-            }
+            saveActivities("competition", competitionsArray);
+            saveActivities("course", coursesArray);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -332,6 +261,49 @@ public class Data {
             writer.write("----- Start of Session -----" + System.lineSeparator());
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    private void saveActivities(String type, JSONArray array) {
+        if (array != null) {
+            for (int i = 0; i < array.length(); i++) {
+                JSONObject obj = array.getJSONObject(i);
+                String name = obj.getString("name");
+
+                JSONObject subscribersObj = obj.getJSONObject("subscribers");
+                ArrayList<Member> subscribers = new ArrayList<>();
+
+                // Admins
+                if (!subscribersObj.isNull("admins")) {
+                    JSONArray admins = subscribersObj.getJSONArray("admins");
+                    for (int j = 0; j < admins.length(); j++) {
+                        JSONObject m = admins.getJSONObject(j);
+                        subscribers.add(new Admin(
+                                m.getString("name"),
+                                m.getString("surname"),
+                                m.getString("email"),
+                                m.getString("password")
+                        ));
+                    }
+                }
+                // Members
+                if (!subscribersObj.isNull("members")) {
+                    JSONArray members = subscribersObj.getJSONArray("members");
+                    for (int j = 0; j < members.length(); j++) {
+                        JSONObject m = members.getJSONObject(j);
+                        subscribers.add(new Member(
+                                m.getString("name"),
+                                m.getString("surname"),
+                                m.getString("email"),
+                                m.getString("password")
+                        ));                        }
+                }
+
+                if(type.equals("course"))
+                    activities.add(new Course(name, subscribers));
+                else
+                    activities.add(new Competition(name, subscribers));
+            }
         }
     }
 

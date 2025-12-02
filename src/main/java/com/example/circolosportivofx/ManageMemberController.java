@@ -7,6 +7,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.util.Duration;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 
 public class ManageMemberController implements Initializable{
 
@@ -88,11 +91,11 @@ public class ManageMemberController implements Initializable{
         }
 
         if (radioAdmin.isSelected()) {
-            currentUser.addAdmin(new Admin(name, surname, email, password), Data.getInstance());
+            currentUser.addAdmin(new Admin(name, surname, email, SHA256Hashing.generateSHA256Hash(password)), Data.getInstance());
             Data.getInstance().writeOutput("Admin " + name + " " + surname + " created by Admin " + currentUser.getName() + " " + currentUser.getSurname());
             createUserLabel.setText("Admin created successfully");
         } else {
-            currentUser.addMember(name, surname, email, password, Data.getInstance());
+            currentUser.addMember(name, surname, email, SHA256Hashing.generateSHA256Hash(password), Data.getInstance());
             Data.getInstance().writeOutput("Member " + name + " " + surname + " created by Admin " + currentUser.getName() + " " + currentUser.getSurname());
             createUserLabel.setText("Member created successfully");
 
@@ -104,7 +107,6 @@ public class ManageMemberController implements Initializable{
         createUserErrorTransition.setDuration(Duration.seconds(1.5));
         createUserErrorTransition.setOnFinished(e -> {createUserLabel.setText(""); createUserLabel.setStyle("-fx-text-fill: red;");});
         createUserErrorTransition.play();
-        return;
     }
 
 
