@@ -78,11 +78,9 @@ public class Data {
 
             // --- ADMINS ---
             JSONArray adminArray = root.getJSONArray("admins");
-            System.out.println(adminArray);
             if (!adminArray.isEmpty()) {
                 for (int i = 0; i < adminArray.length(); i++) {
                     JSONObject a = adminArray.getJSONObject(i);
-                    System.out.println(a);
 
                     Admin admin = new Admin(
                             a.getString("name"),
@@ -200,11 +198,8 @@ public class Data {
 
     public void loadActivities() {
         try(InputStream inputStream = Files.newInputStream(Paths.get(filepathActivities));) {
-            //JsonObject root = JsonParser.parseReader(new FileReader(filepathActivities)).getAsJsonObject();
 
-            // Usa InputStreamReader invece di FileReader
             String jsonText = new String(inputStream.readAllBytes(), StandardCharsets.UTF_8);
-            //System.out.println(jsonText);
             if (jsonText.isBlank()) {
                 System.out.println("File JSON vuoto, niente da caricare.");
                 return;

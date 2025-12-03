@@ -7,8 +7,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.util.Duration;
 
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 
 
 public class ManageMemberController implements Initializable{

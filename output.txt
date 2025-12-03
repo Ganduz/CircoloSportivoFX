@@ -1,3 +1,2 @@
 ----- Start of Session -----
-Admin access granted to: admin admin
 ----- End of Session -----
