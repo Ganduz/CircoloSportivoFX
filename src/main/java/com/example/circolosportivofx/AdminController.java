@@ -52,4 +52,10 @@ public class AdminController {
         stage.centerOnScreen();
         stage.show();
     }
+
+    public void logout(ActionEvent actionEvent) {
+    }
+
+    public void previusScene(ActionEvent actionEvent) {
+    }
 }

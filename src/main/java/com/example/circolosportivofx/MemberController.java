@@ -80,4 +80,10 @@ public class MemberController implements Initializable {
             subscribeTransition.play();
         }
     }
+
+    public void logout(ActionEvent actionEvent) {
+    }
+
+    public void previousScene(ActionEvent actionEvent) {
+    }
 }
