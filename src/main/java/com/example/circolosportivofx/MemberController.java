@@ -36,7 +36,7 @@ public class MemberController implements Initializable {
 
 
     public void initialize(URL location, ResourceBundle resources) {
-        titleLabel.setText(titleLabel.getText() + " " + Data.getInstance().getLoggedUser().getName());
+        //titleLabel.setText(titleLabel.getText() + " " + Data.getInstance().getLoggedUser().getName());
         populateComboBox();
         if (Data.getInstance().getLoggedUser() instanceof Admin) {
             backButton.setVisible(true);
