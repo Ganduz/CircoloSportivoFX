@@ -9,6 +9,6 @@
       <Button fx:id="manageActivitiesButton" layoutX="84.0" layoutY="276.0" mnemonicParsing="false" onAction="#manageActivitiesButtonAction" prefHeight="68.0" prefWidth="433.0" styleClass="custom-button" text="Manage Activity" />
       <Button fx:id="manageMembersButton" layoutX="84.0" layoutY="382.0" mnemonicParsing="false" onAction="#manageMembersButtonAction" prefHeight="68.0" prefWidth="433.0" styleClass="custom-button" text="Manage Members" />
       <Button fx:id="subscribeActivityButton" layoutX="84.0" layoutY="166.0" mnemonicParsing="false" onAction="#subscribeActivityButtonAction" prefHeight="68.0" prefWidth="433.0" styleClass="custom-button" text="Subscribe/Unsubscribe Activity" />
-      <Button fx:id="logoutButton" layoutX="534.0" layoutY="14.0" mnemonicParsing="false" text="Logout" onAction="#logout"/>
+      <Button fx:id="logoutButton" layoutX="517.0" layoutY="14.0" mnemonicParsing="false" onAction="#logout" styleClass="custom-button" text="Logout" />
    </children>
 </AnchorPane>

@@ -4,6 +4,7 @@ import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -13,9 +14,11 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.Objects;
+import java.util.ResourceBundle;
 
-public class LoginController {
+public class LoginController implements Initializable {
 
     @FXML
     private Button loginButton;
@@ -29,42 +32,34 @@ public class LoginController {
     @FXML
     private Label labelResult;
 
+    public void initialize(URL location, ResourceBundle resources) {
+        passwordLogin.setOnKeyPressed((KeyEvent event) -> {
+            if (event.getCode() == KeyCode.ENTER) {
+                loginButton.fire();
+            }
+        });
+    }
+
 
     public void login(ActionEvent actionEvent) throws IOException {
         String email = emailLogin.getText();
         String password = passwordLogin.getText();
 
-        //labelResult.setText("");
         for (Member member : Data.getInstance().getMembers()) {
             if (member.getEmail().equals(email) && member.getPassword().equals(SHA256Hashing.generateSHA256Hash(password))) {
                 // Successful login
+                Data.getInstance().writeOutput("Login Successful: " + member.getName() + " " + member.getSurname() + " logged in.");
                 Data.getInstance().setLoggedUser(member);
-                Scene scene;
-                FXMLLoader fxmlLoader;
                 if (member instanceof Admin) {
-                    Data.getInstance().writeOutput("Admin access granted to: " + member.getName() + " " + member.getSurname());
-                    fxmlLoader = new FXMLLoader(CircoloSportivoApplication.class.getResource("views/admin-view.fxml"));
-                    scene = new Scene(fxmlLoader.load(), 600, 520);
-
+                    SceneController.getInstance((Stage)((Node) actionEvent.getSource()).getScene().getWindow()).changeScene("admin");
                 }
                 else {
-                    Data.getInstance().writeOutput("Member access granted to: " + member.getName() + " " + member.getSurname());
-                    fxmlLoader = new FXMLLoader(CircoloSportivoApplication.class.getResource("views/member-view.fxml"));
-                    scene = new Scene(fxmlLoader.load(), 540, 360);
+                    SceneController.getInstance((Stage)((Node) actionEvent.getSource()).getScene().getWindow()).changeScene("member");
                 }
-                scene.getStylesheets().add(
-                        Objects.requireNonNull(getClass().getResource("styles/member-view.css")).toExternalForm()
-                );
 
-
-                Stage stage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
-                stage.setScene(scene);
-                stage.centerOnScreen();
-                stage.show();
                 return;
             }
         }
-        // Failed login
         labelResult.setText("Login Failed: Incorrect email or password");
         Data.getInstance().writeOutput("Login Failed: Incorrect email or password");
         emailLogin.setText("");

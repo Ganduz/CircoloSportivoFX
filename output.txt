@@ -1,1 +1,7 @@
 ----- Start of Session -----
+Login Successful: admin admin logged in.
+Member Ciccio Caputo created by Admin admin admin
+[(Admin) Alice Smith, (Admin) admin admin, (Admin) sha sha, (Admin) prova prova, (Member) Bob Johnson, (Member) Carol Williams, (Member) David Brown, (Member) member member, (Member) Ciccio Caputo]
+Course Golf created by Admin admin admin
+[(Admin) Alice Smith, (Admin) admin admin, (Admin) sha sha, (Admin) prova prova, (Member) Bob Johnson, (Member) Carol Williams, (Member) David Brown, (Member) member member, (Member) Ciccio Caputo]
+----- End of Session -----

@@ -33,18 +33,42 @@
                 }]
             },
             "name": "Nuoto"
+        },
+        {
+            "subscribers": {
+                "members": [],
+                "admins": []
+            },
+            "name": "Golf"
         }
     ],
-    "competitions": [{
-        "subscribers": {
-            "members": [],
-            "admins": [{
-                "password": "david",
-                "surname": "Brown",
-                "name": "David",
-                "email": "david"
-            }]
+    "competitions": [
+        {
+            "subscribers": {
+                "members": [],
+                "admins": [
+                    {
+                        "password": "david",
+                        "surname": "Brown",
+                        "name": "David",
+                        "email": "david"
+                    },
+                    {
+                        "password": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8",
+                        "surname": "admin",
+                        "name": "admin",
+                        "email": "admin"
+                    }
+                ]
+            },
+            "name": "Pallavolo"
         },
-        "name": "Pallavolo"
-    }]
+        {
+            "subscribers": {
+                "members": [],
+                "admins": []
+            },
+            "name": "Calcio"
+        }
+    ]
 }

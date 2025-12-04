@@ -16,55 +16,21 @@ public class AdminController {
 
     @FXML
     public void manageMembersButtonAction(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(CircoloSportivoApplication.class.getResource("views/manage-member-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 616, 670);
-        scene.getStylesheets().add(
-                Objects.requireNonNull(getClass().getResource("styles/manage-view.css")).toExternalForm()
-        );
-        Stage stage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.centerOnScreen();
-        stage.show();
+        SceneController.getInstance((Stage) ((Button) actionEvent.getSource()).getScene().getWindow()).changeScene("manageMembers");
     }
 
 
     @FXML
     public void manageActivitiesButtonAction(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(CircoloSportivoApplication.class.getResource("views/manage-activities-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 616, 503);
-        scene.getStylesheets().add(
-                Objects.requireNonNull(getClass().getResource("styles/manage-view.css")).toExternalForm()
-        );
-        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.centerOnScreen();
-        stage.show();
+        SceneController.getInstance((Stage) ((Button) actionEvent.getSource()).getScene().getWindow()).changeScene("manageActivities");
     }
 
     public void subscribeActivityButtonAction(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(CircoloSportivoApplication.class.getResource("views/member-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 540, 360);
-        scene.getStylesheets().add(
-                Objects.requireNonNull(getClass().getResource("styles/member-view.css")).toExternalForm()
-        );
-        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.centerOnScreen();
-        stage.show();
+        SceneController.getInstance((Stage) ((Button) actionEvent.getSource()).getScene().getWindow()).changeScene("member");
     }
 
     public void logout(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(CircoloSportivoApplication.class.getResource("views/login-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
-        scene.getStylesheets().add(
-                Objects.requireNonNull(getClass().getResource("styles/login-view.css")).toExternalForm()
-        );
-        Stage stage = (Stage)((Button) actionEvent.getSource()).getScene().getWindow();
-        stage.setTitle("");
-        stage.setScene(scene);
-        stage.centerOnScreen();
-        stage.resizableProperty().setValue(false);
-        stage.show();
+        SceneController.getInstance((Stage) ((Button) actionEvent.getSource()).getScene().getWindow()).changeScene("login");
         Data.getInstance().writeOutput("Member: " + Data.getInstance().getLoggedUser().getName() + Data.getInstance().getLoggedUser().getSurname() + " logged out.");
         Data.getInstance().setLoggedUser(null);
     }

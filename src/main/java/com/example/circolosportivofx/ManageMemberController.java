@@ -110,6 +110,7 @@ public class ManageMemberController implements Initializable{
         createUserErrorTransition.setDuration(Duration.seconds(1.5));
         createUserErrorTransition.setOnFinished(e -> {createUserLabel.setText(""); createUserLabel.setStyle("-fx-text-fill: red;");});
         createUserErrorTransition.play();
+        clearFields();
     }
 
 
@@ -122,19 +123,15 @@ public class ManageMemberController implements Initializable{
     }
 
 
-
     public void previousScene(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(CircoloSportivoApplication.class.getResource("views/admin-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 520);
-        scene.getStylesheets().add(
-                Objects.requireNonNull(getClass().getResource("styles/admin-view.css")).toExternalForm()
-        );
-        Stage stage = (Stage)((Button) actionEvent.getSource()).getScene().getWindow();
-        stage.setTitle("");
-        stage.setScene(scene);
-        stage.centerOnScreen();
-        stage.resizableProperty().setValue(false);
-        stage.show();
+        SceneController.getInstance((Stage) memberComboBox.getScene().getWindow()).changeScene("admin");
+    }
+
+    private void clearFields() {
+        nameField.clear();
+        surnameField.clear();
+        emailField.clear();
+        passwordField.clear();
     }
 
 }
