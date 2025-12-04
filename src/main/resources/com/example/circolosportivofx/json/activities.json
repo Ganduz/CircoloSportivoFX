@@ -1,60 +1,74 @@
 {
-  "activities": [
+  "courses": [
     {
-      "type": "course",
-      "name": "Tennis",
-      "subscribers" :
-      {
-        "admins" :
-        [
-          {
-            "name": "Alice",
-            "surname": "Smith",
-            "email": "alice",
-            "password": "alice"
-          }
-        ] ,
-        "members" :
-        [
-          {
-            "name": "Bob",
-            "surname": "Johnson",
-            "email": "bob",
-            "password": "bob"
-          }
-        ]
-      }
+      "subscribers": {
+        "members": [{
+          "password": "bob",
+          "surname": "Johnson",
+          "name": "Bob",
+          "email": "bob"
+        }],
+        "admins": [{
+          "password": "alice",
+          "surname": "Smith",
+          "name": "Alice",
+          "email": "alice"
+        }]
+      },
+      "name": "Tennis"
     },
     {
-      "type": "course",
-      "name": "Nuoto",
-      "subscribers" : {
+      "subscribers": {
+        "members": [{
+          "password": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8",
+          "surname": "member",
+          "name": "member",
+          "email": "member"
+        }],
+        "admins": [{
+          "password": "carol",
+          "surname": "Williams",
+          "name": "Carol",
+          "email": "carol"
+        }]
+      },
+      "name": "Nuoto"
+    },
+    {
+      "subscribers": {
+        "members": [],
+        "admins": []
+      },
+      "name": "Golf"
+    }
+  ],
+  "competitions": [
+    {
+      "subscribers": {
+        "members": [],
         "admins": [
           {
-            "name": "Carol",
-            "surname": "Williams",
-            "email": "carol",
-            "password": "carol"
+            "password": "david",
+            "surname": "Brown",
+            "name": "David",
+            "email": "david"
+          },
+          {
+            "password": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8",
+            "surname": "admin",
+            "name": "admin",
+            "email": "admin"
           }
         ]
-      }
+      },
+      "name": "Pallavolo"
     },
     {
-      "type": "competition",
-      "name": "Pallavolo",
-      "subscribers" :
-      {
-      "admins":
-      [
-          {
-            "name": "David",
-            "surname": "Brown",
-            "email": "david",
-            "password": "david"
-          }
-        ]
-      }
+      "subscribers": {
+        "members": [],
+        "admins": []
+      },
+      "name": "Calcio"
     }
-
   ]
 }

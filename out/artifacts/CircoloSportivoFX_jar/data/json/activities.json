@@ -1,0 +1,84 @@
+{
+    "courses": [
+        {
+            "subscribers": {
+                "members": [{
+                    "password": "bob",
+                    "surname": "Johnson",
+                    "name": "Bob",
+                    "email": "bob"
+                }],
+                "admins": [{
+                    "password": "alice",
+                    "surname": "Smith",
+                    "name": "Alice",
+                    "email": "alice"
+                }]
+            },
+            "name": "Tennis"
+        },
+        {
+            "subscribers": {
+                "members": [{
+                    "password": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8",
+                    "surname": "member",
+                    "name": "member",
+                    "email": "member"
+                }],
+                "admins": [{
+                    "password": "carol",
+                    "surname": "Williams",
+                    "name": "Carol",
+                    "email": "carol"
+                }]
+            },
+            "name": "Nuoto"
+        },
+        {
+            "subscribers": {
+                "members": [{
+                    "password": "1bc9c8ddd83611a8dbea7f113ec9bcfc7fea9c089c7c5c69e31f657cb1b04488",
+                    "surname": "medioli",
+                    "name": "alex",
+                    "email": "alexmedioli04@gmail.com"
+                }],
+                "admins": []
+            },
+            "name": "Golf"
+        }
+    ],
+    "competitions": [
+        {
+            "subscribers": {
+                "members": [],
+                "admins": [
+                    {
+                        "password": "david",
+                        "surname": "Brown",
+                        "name": "David",
+                        "email": "david"
+                    },
+                    {
+                        "password": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8",
+                        "surname": "admin",
+                        "name": "admin",
+                        "email": "admin"
+                    }
+                ]
+            },
+            "name": "Pallavolo"
+        },
+        {
+            "subscribers": {
+                "members": [{
+                    "password": "1bc9c8ddd83611a8dbea7f113ec9bcfc7fea9c089c7c5c69e31f657cb1b04488",
+                    "surname": "medioli",
+                    "name": "alex",
+                    "email": "alexmedioli04@gmail.com"
+                }],
+                "admins": []
+            },
+            "name": "Calcio"
+        }
+    ]
+}

@@ -29,6 +29,11 @@ public class Data {
     }
 
     private Data() {
+        try{
+            extractDataFolder();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         loadUsers();
         loadActivities();
     }
@@ -225,15 +230,6 @@ public class Data {
         this.loggedUser = loggedUser;
     }
 
-    public Activity getActivityByName(String name) {
-        for (Activity activity : Data.getInstance().getActivities()) {
-            if (activity.getName().equals(name)) {
-                return activity;
-            }
-        }
-        return null;
-    }
-
     public void writeOutput(String message) {
         try (FileWriter writer = new FileWriter("output.txt", true)) {
             writer.write(message + System.lineSeparator());
@@ -298,6 +294,35 @@ public class Data {
                     activities.add(new Course(name, subscribers));
                 else
                     activities.add(new Competition(name, subscribers));
+            }
+        }
+    }
+
+
+    public static void extractDataFolder() throws IOException {
+        // Cartella esterna dove vuoi copiare i file
+        File outDir = new File("data/json");
+        if (!outDir.exists()) {
+            outDir.mkdirs();
+        }
+
+        // Lista dei file JSON nella cartella resources/data
+        String[] files = { "users.json", "activities.json" };
+
+        for (String fileName : files) {
+            File outFile = new File(outDir, fileName);
+
+            // Copia solo se il file non esiste già
+            if (!outFile.exists()) {
+                String resourcePath = "json/" + fileName;
+
+                try (InputStream is = CircoloSportivoApplication.class.getResourceAsStream(resourcePath)) {
+                    if (is == null) {
+                        throw new FileNotFoundException("Risorsa non trovata nel JAR: " + resourcePath);
+                    }
+                    Files.copy(is, outFile.toPath());
+                    System.out.println("Copiato: " + outFile.getAbsolutePath());
+                }
             }
         }
     }

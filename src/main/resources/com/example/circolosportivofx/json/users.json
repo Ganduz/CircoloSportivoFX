@@ -1,43 +1,60 @@
 {
-  "admins": [
-    {
-      "name": "Alice",
-      "surname": "Smith",
-      "email": "alicesmithadmin@gmail.com",
-      "password": "admin"
-    },
-    {
-      "name": "admin",
-      "surname": "admin",
-      "email": "admin",
-      "password": "admin"
-    }
-
-  ],
   "members": [
     {
-      "name": "Bob",
+      "password": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8",
       "surname": "Johnson",
-      "email": "bobjohnson@yahoo.com",
-      "password": "password1"
+      "name": "Bob",
+      "email": "bobjohnson@yahoo.com"
     },
     {
-      "name": "Carol",
+      "password": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8",
       "surname": "Williams",
-      "email": "carolwilliams@hotmail.com",
-      "password": "password2"
+      "name": "Carol",
+      "email": "carolwilliams@hotmail.com"
     },
     {
-      "name": "David",
+      "password": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8",
       "surname": "Brown",
-      "email": "davidebrown@libero.it",
-      "password": "password3"
+      "name": "David",
+      "email": "davidebrown@libero.it"
     },
     {
-      "name": "member",
+      "password": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8",
       "surname": "member",
-      "email": "member",
-        "password": "member"
+      "name": "member",
+      "email": "member"
+    },
+    {
+      "password": "edf86c8e86461f782f02ddfe965b28a1e97dbfaf3245a76088896793793bc77a",
+      "surname": "Caputo",
+      "name": "Ciccio",
+      "email": "cicciocaputo@gmail.com"
+    }
+  ],
+  "admins": [
+    {
+      "password": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8",
+      "surname": "Smith",
+      "name": "Alice",
+      "email": "alicesmithadmin@gmail.com"
+    },
+    {
+      "password": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8",
+      "surname": "admin",
+      "name": "admin",
+      "email": "admin"
+    },
+    {
+      "password": "d600474b1b8e50d3633c91c0cf1efc454b79c9624a43fd7de441ee71745726ab",
+      "surname": "sha",
+      "name": "sha",
+      "email": "sha"
+    },
+    {
+      "password": "e7000b89404b53e6c3c56ab26afc9f49577d339b1b3dc1ec5c13a157703aba0b",
+      "surname": "prova",
+      "name": "prova",
+      "email": "prova999"
     }
   ]
 }

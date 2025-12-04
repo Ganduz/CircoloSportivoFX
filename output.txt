@@ -1,4 +1,2 @@
 ----- Start of Session -----
-Login Successful: prova prova logged in.
-Member: provaprova logged out.
 ----- End of Session -----

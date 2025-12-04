@@ -1,0 +1,7 @@
+----- Start of Session -----
+Login Successful: alex medioli logged in.
+User alex medioli subscribed to activity Calcio
+Activity List : [(Member) alex medioli]
+User alex medioli subscribed to activity Golf
+Activity List : [(Member) alex medioli]
+----- End of Session -----
