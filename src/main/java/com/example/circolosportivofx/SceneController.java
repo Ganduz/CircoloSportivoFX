@@ -59,10 +59,12 @@ public class SceneController {
         screenMap.put("admin", CircoloSportivoApplication.class.getResource("views/admin-view.fxml"));
         screenMap.put("manageMembers", CircoloSportivoApplication.class.getResource("views/manage-member-view.fxml"));
         screenMap.put("manageActivities",CircoloSportivoApplication.class.getResource("views/manage-activities-view.fxml"));
+        screenMap.put("modifyMember", CircoloSportivoApplication.class.getResource("views/modify-member-view.fxml"));
         cssMap.put("login", CircoloSportivoApplication.class.getResource("styles/login-view.css"));
         cssMap.put("member", CircoloSportivoApplication.class.getResource("styles/member-view.css"));
         cssMap.put("admin", CircoloSportivoApplication.class.getResource("styles/admin-view.css"));
         cssMap.put("manage", CircoloSportivoApplication.class.getResource("styles/manage-view.css"));
+        cssMap.put("modifyMember", CircoloSportivoApplication.class.getResource("styles/modify-member-view.css"));
 
     }
 

@@ -3,12 +3,13 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="520.0" prefWidth="600.0" styleClass="root-pane" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.circolosportivofx.AdminController">
+<AnchorPane prefHeight="615.0" prefWidth="600.0" styleClass="root-pane" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.circolosportivofx.AdminController">
    <children>
       <Label alignment="CENTER" layoutX="84.0" layoutY="54.0" prefHeight="59.0" prefWidth="433.0" styleClass="title" text="Benvenuto Admin " />
       <Button fx:id="manageActivitiesButton" layoutX="84.0" layoutY="276.0" mnemonicParsing="false" onAction="#manageActivitiesButtonAction" prefHeight="68.0" prefWidth="433.0" styleClass="custom-button" text="Manage Activity" />
       <Button fx:id="manageMembersButton" layoutX="84.0" layoutY="382.0" mnemonicParsing="false" onAction="#manageMembersButtonAction" prefHeight="68.0" prefWidth="433.0" styleClass="custom-button" text="Manage Members" />
       <Button fx:id="subscribeActivityButton" layoutX="84.0" layoutY="166.0" mnemonicParsing="false" onAction="#subscribeActivityButtonAction" prefHeight="68.0" prefWidth="433.0" styleClass="custom-button" text="Subscribe/Unsubscribe Activity" />
       <Button fx:id="logoutButton" layoutX="517.0" layoutY="14.0" mnemonicParsing="false" onAction="#logout" styleClass="custom-button" text="Logout" />
+      <Button layoutX="84.0" layoutY="485.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="433.0" text="Modify Members" onAction="#modifyMembersButtonAction" styleClass="custom-button"/>
    </children>
 </AnchorPane>

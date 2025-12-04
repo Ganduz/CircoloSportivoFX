@@ -48,5 +48,4 @@ public class Member extends Person {
         return "(Member) " + super.toString();
     }
 
-
 }

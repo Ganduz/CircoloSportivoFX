@@ -1,0 +1,68 @@
+.root-pane {
+    -fx-background-color: #FFFFFF;
+}
+
+.title {
+    -fx-text-fill: #333;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.input-field {
+    -fx-background-color: white;
+    -fx-text-fill: #222;
+    -fx-background-radius: 8;
+    -fx-padding: 0 12 0 12;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 8;
+}
+
+.input-field:focused {
+    -fx-border-color: black;
+}
+
+.custom-combobox {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 4;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 4;
+    -fx-padding: 4 6;
+    -fx-font-size: 13px;
+}
+
+/* Stato hover */
+.custom-combobox:hover {
+    -fx-border-color: #999999;
+}
+
+/* Stato focus */
+.custom-combobox:focused {
+    -fx-border-color: #666666;
+}
+
+.custom-button {
+    -fx-background-color: #232422;
+    -fx-text-fill: white;
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-font-size: 13px;
+    -fx-padding: 6 14;
+
+}
+
+/* Hover dei pulsanti */
+.custom-button:hover {
+    -fx-background-color: #353635;
+}
+
+/* Pressed */
+.custom-button:pressed {
+    -fx-background-color: #1b1c1b
+}
+
+.error-message {
+    -fx-alignment: center;
+    -fx-text-fill: red;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}

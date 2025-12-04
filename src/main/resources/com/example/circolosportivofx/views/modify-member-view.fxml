@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.circolosportivofx.ModifyMemberController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="558.0" prefWidth="504.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.circolosportivofx.ModifyMemberController">
+   <children>
+      <ComboBox fx:id="memberComboBox" layoutX="84.0" layoutY="96.0" onAction="#memberSelected" prefHeight="36.0" prefWidth="337.0" styleClass="custom-combobox" />
+      <TextField fx:id="nameField" layoutX="84.0" layoutY="170.0" prefHeight="36.0" prefWidth="337.0" styleClass="input-field" />
+      <TextField fx:id="surnameField" layoutX="84.0" layoutY="225.0" prefHeight="36.0" prefWidth="337.0" styleClass="input-field" />
+      <TextField fx:id="emailField" layoutX="84.0" layoutY="279.0" prefHeight="36.0" prefWidth="337.0" styleClass="input-field" />
+      <TextField fx:id="passwordField" layoutX="84.0" layoutY="332.0" prefHeight="36.0" prefWidth="337.0" styleClass="input-field" />
+      <Button fx:id="confirmButton" layoutX="84.0" layoutY="418.0" mnemonicParsing="false" onAction="#modifyMember" prefHeight="36.0" prefWidth="337.0" styleClass="custom-button" text="Save Changes" />
+      <Button fx:id="backButton" layoutX="35.0" layoutY="507.0" mnemonicParsing="false" onAction="#previousScene" prefHeight="25.0" prefWidth="63.0" styleClass="custom-button" text="Back" />
+      <Label layoutX="84.0" layoutY="34.0" prefHeight="17.0" prefWidth="337.0" styleClass="title" text="Pick a member or admin to modify" />
+      <Label fx:id="infoLabel" layoutX="84.0" layoutY="383.0" prefHeight="17.0" prefWidth="337.0" styleClass="error-message" />
+   </children>
 </AnchorPane>
