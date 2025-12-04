@@ -21,6 +21,8 @@ public class CircoloSportivoApplication extends Application {
                 Objects.requireNonNull(getClass().getResource("styles/login-view.css")).toExternalForm()
         );
 
+        System.out.println(Data.getInstance().getActivities());
+
         stage.centerOnScreen();
         stage.setTitle("");
         stage.setScene(scene);

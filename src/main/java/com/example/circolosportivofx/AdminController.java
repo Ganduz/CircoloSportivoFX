@@ -53,9 +53,20 @@ public class AdminController {
         stage.show();
     }
 
-    public void logout(ActionEvent actionEvent) {
+    public void logout(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(CircoloSportivoApplication.class.getResource("views/login-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        scene.getStylesheets().add(
+                Objects.requireNonNull(getClass().getResource("styles/login-view.css")).toExternalForm()
+        );
+        Stage stage = (Stage)((Button) actionEvent.getSource()).getScene().getWindow();
+        stage.setTitle("");
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.resizableProperty().setValue(false);
+        stage.show();
+        Data.getInstance().writeOutput("Member: " + Data.getInstance().getLoggedUser().getName() + Data.getInstance().getLoggedUser().getSurname() + " logged out.");
+        Data.getInstance().setLoggedUser(null);
     }
 
-    public void previusScene(ActionEvent actionEvent) {
-    }
 }

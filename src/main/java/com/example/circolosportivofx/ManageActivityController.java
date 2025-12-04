@@ -3,9 +3,15 @@ package com.example.circolosportivofx;
 import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 import javafx.util.Duration;
+
+import java.io.IOException;
+import java.util.Objects;
 
 public class ManageActivityController implements Initializable {
 
@@ -100,5 +106,19 @@ public class ManageActivityController implements Initializable {
                 return false;
         }
         return true;
+    }
+
+    public void previousScene(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(CircoloSportivoApplication.class.getResource("views/admin-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 520);
+        scene.getStylesheets().add(
+                Objects.requireNonNull(getClass().getResource("styles/admin-view.css")).toExternalForm()
+        );
+        Stage stage = (Stage)((Button) actionEvent.getSource()).getScene().getWindow();
+        stage.setTitle("");
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.resizableProperty().setValue(false);
+        stage.show();
     }
 }

@@ -7,6 +7,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -16,7 +18,7 @@ import java.util.Objects;
 public class LoginController {
 
     @FXML
-    private Button buttonLogin;
+    private Button loginButton;
 
     @FXML
     private TextField emailLogin;
@@ -72,6 +74,5 @@ public class LoginController {
         LoginErrorTransition.setOnFinished(e -> labelResult.setText(""));
         LoginErrorTransition.play();
     }
-
 
 }

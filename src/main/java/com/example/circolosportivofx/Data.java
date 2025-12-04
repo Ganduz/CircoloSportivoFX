@@ -209,8 +209,8 @@ public class Data {
             JSONArray competitionsArray = root.getJSONArray("competitions");
             JSONArray coursesArray = root.getJSONArray("courses");
 
-            saveActivities("competition", competitionsArray);
-            saveActivities("course", coursesArray);
+            loadFromList("competition", competitionsArray);
+            loadFromList("course", coursesArray);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -259,7 +259,7 @@ public class Data {
         }
     }
 
-    private void saveActivities(String type, JSONArray array) {
+    private void loadFromList(String type, JSONArray array) {
         if (array != null) {
             for (int i = 0; i < array.length(); i++) {
                 JSONObject obj = array.getJSONObject(i);

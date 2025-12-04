@@ -1,2 +1,4 @@
 ----- Start of Session -----
+Login Failed: Incorrect email or password
+Admin access granted to: admin admin
 ----- End of Session -----

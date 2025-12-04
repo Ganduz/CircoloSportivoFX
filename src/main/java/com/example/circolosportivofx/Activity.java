@@ -82,6 +82,8 @@ public abstract class Activity
     {
         if (!subscribers.contains(person))
             subscribers.add(person);
+        else
+            System.out.println("Subscriber already enrolled in this activity.");
     }
 
     /**
@@ -91,11 +93,30 @@ public abstract class Activity
      */
     public void removeSubscriber(Person person)
     {
-        subscribers.remove(person);
+
+        int i;
+        for (i = 0; i < subscribers.size(); i++)
+        {
+            if(subscribers.get(i).getEmail().equals(person.getEmail()))
+            {
+                subscribers.remove(i);
+                return;
+            }
+        }
     }
 
     @Override
     public String toString() {
         return name;
+    }
+
+    public Boolean isSubscribed(Member person)
+    {
+        for(Member m : subscribers)
+        {
+            if(m.getEmail().equals(person.getEmail()))
+                return true;
+        }
+        return false;
     }
 }

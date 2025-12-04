@@ -16,7 +16,7 @@
         <RadioButton fx:id="radioCourse" layoutX="167.0" layoutY="152.0" mnemonicParsing="false" text="Course" />
         <RadioButton fx:id="radioCompetition" layoutX="341.0" layoutY="152.0" mnemonicParsing="false" text="Competition" />
         <Label fx:id="infoLabel" layoutX="81.0" layoutY="280.0" prefHeight="17.0" prefWidth="454.0" styleClass="error-message" />
-      <Button layoutX="14.0" layoutY="457.0" mnemonicParsing="false" text="Back" />
+      <Button layoutX="14.0" layoutY="457.0" mnemonicParsing="false" text="Back" onAction="#previousScene" />
 
     </children>
 
