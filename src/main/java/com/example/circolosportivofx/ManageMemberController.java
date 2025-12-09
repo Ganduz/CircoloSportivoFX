@@ -3,17 +3,15 @@ package com.example.circolosportivofx;
 import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-
 import java.io.IOException;
-import java.util.Objects;
 
-
+/**
+ * Controller class for managing members (admin feature) in the JavaFX application.
+ */
 public class ManageMemberController implements Initializable{
 
     @FXML
@@ -36,7 +34,11 @@ public class ManageMemberController implements Initializable{
 
     private final Admin currentUser = (Admin) Data.getInstance().getLoggedUser();
 
-
+    /**
+     * Initializes the controller class (method inherited from interface).
+     * @param location
+     * @param resources
+     */
     @Override
     public void initialize(java.net.URL location, java.util.ResourceBundle resources) {
         ToggleGroup tg = new ToggleGroup();
@@ -46,6 +48,9 @@ public class ManageMemberController implements Initializable{
         radioMember.setSelected(true);
     }
 
+    /**
+     * Populates the member combo box with members excluding the logged-in user.
+     */
     private void populateMemberList() {
         memberComboBox.getItems().clear();
         memberComboBox.getSelectionModel().clearSelection();
@@ -61,6 +66,10 @@ public class ManageMemberController implements Initializable{
         }
     }
 
+    /**
+     * Removes the selected member from the system.
+     * @param actionEvent button click event
+     */
     public void removeMember(ActionEvent actionEvent) {
         Member selected = memberComboBox.getSelectionModel().getSelectedItem();
         currentUser.removeMember(selected, Data.getInstance());
@@ -68,6 +77,10 @@ public class ManageMemberController implements Initializable{
         populateMemberList();
     }
 
+    /**
+     * Creates a new member or admin based on input fields.
+     * @param actionEvent button click event
+     */
     public void createMember(ActionEvent actionEvent) {
         String name = nameField.getText();
         String surname = surnameField.getText();
@@ -114,6 +127,11 @@ public class ManageMemberController implements Initializable{
     }
 
 
+    /**
+     * Checks if the provided email is available (not already used by another member).
+     * @param email the email to check
+     * @return true if the email is available, false otherwise
+     */
     private Boolean emailIsAvailable(String email) {
         for (Member member : Data.getInstance().getMembers()) {
             if (member.getEmail().equals(email))
@@ -122,11 +140,18 @@ public class ManageMemberController implements Initializable{
         return true;
     }
 
-
+    /**
+     * Navigates back to the admin scene.
+     * @param actionEvent button click event
+     * @throws IOException if scene change fails
+     */
     public void previousScene(ActionEvent actionEvent) throws IOException {
         SceneController.getInstance((Stage) memberComboBox.getScene().getWindow()).changeScene("admin");
     }
 
+    /**
+     * Clears the input fields.
+     */
     private void clearFields() {
         nameField.clear();
         surnameField.clear();

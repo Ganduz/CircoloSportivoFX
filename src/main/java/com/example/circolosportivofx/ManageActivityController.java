@@ -3,16 +3,15 @@ package com.example.circolosportivofx;
 import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-
 import java.io.IOException;
-import java.util.Objects;
 
+/**
+ * Controller class for managing activities (admin feature) in the JavaFX application.
+ */
 public class ManageActivityController implements Initializable {
 
     @FXML
@@ -33,6 +32,11 @@ public class ManageActivityController implements Initializable {
     private final Admin currentUser = (Admin) Data.getInstance().getLoggedUser();
 
 
+    /**
+     * Initializes the controller class (method inherited from interface).
+     * @param location
+     * @param resources
+     */
     @Override
     public void initialize(java.net.URL location, java.util.ResourceBundle resources) {
         ToggleGroup tg = new ToggleGroup();
@@ -42,6 +46,9 @@ public class ManageActivityController implements Initializable {
         radioCourse.setSelected(true);
     }
 
+    /**
+     * Populates the activity combo box with all activities.
+     */
     private void populateActivityList() {
         activitiesComboBox.getItems().clear();
         activitiesComboBox.getSelectionModel().clearSelection();
@@ -50,6 +57,10 @@ public class ManageActivityController implements Initializable {
         activitiesComboBox.getItems().addAll(Data.getInstance().getActivities());
     }
 
+    /**
+     * Removes the selected activity.
+     * @param actionEvent button click event
+     */
     public void removeActivity(ActionEvent actionEvent) {
         Activity selected = activitiesComboBox.getSelectionModel().getSelectedItem();
         currentUser.removeActivity(selected, Data.getInstance());
@@ -57,6 +68,10 @@ public class ManageActivityController implements Initializable {
         populateActivityList();
     }
 
+    /**
+     * Creates a new activity based on input fields.
+     * @param actionEvent button click event
+     */
     public void createActivity(ActionEvent actionEvent) {
         String name = nameField.getText();
 
@@ -99,7 +114,11 @@ public class ManageActivityController implements Initializable {
         nameField.clear();
     }
 
-
+    /**
+     * Checks if the activity name is available (not already used).
+     * @param name the activity name to check
+     * @return true if the name is available, false otherwise
+     */
     private Boolean nameIsAvailable(String name) {
         for (Activity activity : Data.getInstance().getActivities()) {
             if (activity.getName().toLowerCase().equals(name.toLowerCase()))
@@ -108,6 +127,11 @@ public class ManageActivityController implements Initializable {
         return true;
     }
 
+    /**
+     * Navigates back to the admin scene.
+     * @param actionEvent button click event
+     * @throws IOException if scene change fails
+     */
     public void previousScene(ActionEvent actionEvent) throws IOException {
         SceneController.getInstance((Stage) ((Button) actionEvent.getSource()).getScene().getWindow()).changeScene("admin");
     }

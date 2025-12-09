@@ -4,32 +4,15 @@ package com.example.circolosportivofx;
  * The type Admin.
  */
 public class Admin extends Member {
-    /**
-     * Instantiates a new Admin.
-     *
-     * @param name     the name
-     * @param surname  the surname
-     * @param email    the email
-     * @param password the password
-     */
+
     public Admin(String name, String surname, String email, String password) {
         super(name, surname, email, password);
     }
 
-    /**
-     * Instantiates a new Admin.
-     *
-     * @param person the person
-     */
     public Admin(Person person) {
         super(person);
     }
 
-    /**
-     * Instantiates a new Admin.
-     *
-     * @param member the member
-     */
     public Admin(Member member) {
         super(member);
     }
@@ -48,7 +31,7 @@ public class Admin extends Member {
     }
 
     /**
-     * Add member.
+     * Overload for addMember method above but instead of parameters it takes a Person object.
      *
      * @param person the person
      * @param data   the data
@@ -58,7 +41,7 @@ public class Admin extends Member {
     }
 
     /**
-     * Remove member.
+     * Remove member or admin.
      *
      * @param member the member
      * @param data   the data
@@ -110,25 +93,6 @@ public class Admin extends Member {
         data.getMembers().add(new Admin(member));
     }
 
-    /**
-     * Add admin from person.
-     *
-     * @param person the person
-     * @param data   the data
-     */
-    public void addAdmin(Person person, Data data) {
-        data.getMembers().add(new Admin(person));
-    }
-
-    /**
-     * Remove admin.
-     *
-     * @param admin the admin
-     * @param data  the data
-     */
-    public void removeAdmin(Admin admin, Data data) {
-        data.getMembers().remove(admin);
-    }
 
     /**
      * Modify member.

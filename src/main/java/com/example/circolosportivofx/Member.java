@@ -4,40 +4,30 @@ package com.example.circolosportivofx;
  * The type Member.
  */
 public class Member extends Person {
-    /**
-     * Instantiates a new Member.
-     *
-     * @param name     the name
-     * @param surname  the surname
-     * @param email    the email
-     * @param password the password
-     */
+
     public Member(String name, String surname, String email, String password) {
         super(name, surname, email, password);
     }
 
-    /**
-     * Instantiates a new Member.
-     *
-     * @param person the person
-     */
     public Member(Person person) {
         super(person.getName(), person.getSurname(), person.getEmail(), person.getPassword());
     }
 
     /**
-     * Enroll activity.
+     * Enrolls the member in the specified activity.
+     * Other method to add a member, not used because we used  activity.addSubscriber(member)
      *
-     * @param activity the activity
+     * @param activity the activity to enroll in
      */
     public void enrollActivity(Activity activity) {
         activity.addSubscriber(this);
     }
 
     /**
-     * Unenroll activity.
+     * Unenrolls the member from the specified activity.
+     * Other method to remove, not used because we used  activity.removeSubscriber(member)
      *
-     * @param activity the activity
+     * @param activity the activity to unenroll from
      */
     public void unenrollActivity(Activity activity) {
         activity.removeSubscriber(this);

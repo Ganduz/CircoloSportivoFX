@@ -3,21 +3,20 @@ package com.example.circolosportivofx;
 import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-
 import java.io.IOException;
 import java.net.URL;
-import java.util.Objects;
 import java.util.ResourceBundle;
 
+/**
+ * Controller class for handling user login in the JavaFX application.
+ */
 public class LoginController implements Initializable {
 
     @FXML
@@ -32,6 +31,12 @@ public class LoginController implements Initializable {
     @FXML
     private Label labelResult;
 
+    /**
+     * Initializes the controller class (method inherited from interface).
+     * @param location
+     * @param resources
+     */
+    @Override
     public void initialize(URL location, ResourceBundle resources) {
         passwordLogin.setOnKeyPressed((KeyEvent event) -> {
             if (event.getCode() == KeyCode.ENTER) {
@@ -40,7 +45,11 @@ public class LoginController implements Initializable {
         });
     }
 
-
+    /**
+     * Handles the login action when the login button is clicked.
+     * @param actionEvent button click event
+     * @throws IOException if scene change fails
+     */
     public void login(ActionEvent actionEvent) throws IOException {
         String email = emailLogin.getText();
         String password = passwordLogin.getText();

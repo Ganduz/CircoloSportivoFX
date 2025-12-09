@@ -4,20 +4,30 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.HashMap;
-import java.util.Objects;
+
+/**
+ * SceneController is a singleton class that manages scene transitions in the JavaFX application.
+ * It maintains mappings of scene names to their corresponding FXML file URLs and CSS file URLs.
+ * The class provides methods to change scenes and set stage properties.
+ */
 
 public class SceneController {
 
-    //aggiungere hasmmap css
     private static SceneController instance;
-    private HashMap<String, URL> screenMap = new HashMap<>();
-    private HashMap<String , URL> cssMap = new HashMap<>();
+    private final HashMap<String, URL> screenMap = new HashMap<>();
+    private final HashMap<String , URL> cssMap = new HashMap<>();
     private Stage stage;
 
+    /**
+     * Returns the singleton instance of SceneController.
+     * If the instance does not exist, it creates a new one with the provided stage.
+     *
+     * @param stage The primary stage of the application.
+     * @return The singleton instance of SceneController.
+     */
     public static SceneController getInstance(Stage stage)  {
         if (instance == null) {
             instance = new SceneController(stage);
@@ -30,6 +40,12 @@ public class SceneController {
         initMaps();
     }
 
+    /**
+     * Changes the current scene to the specified scene name.
+     *
+     * @param sceneName The name of the scene to switch to.
+     * @throws IOException If the FXML file cannot be loaded.
+     */
     public void changeScene(String sceneName) throws IOException {
         Pane pane = FXMLLoader.load(screenMap.get(sceneName));
         Scene scene = new Scene(pane);
@@ -49,10 +65,9 @@ public class SceneController {
         setStageProperties();
     }
 
-    public Scene getCurrentScene(){
-        return stage.getScene();
-    }
-
+    /**
+     * Initializes the mappings of scene names to their corresponding FXML and CSS file URLs.
+     */
     private void initMaps(){
         screenMap.put("login", CircoloSportivoApplication.class.getResource("views/login-view.fxml"));
         screenMap.put("member", CircoloSportivoApplication.class.getResource("views/member-view.fxml"));
@@ -68,6 +83,9 @@ public class SceneController {
 
     }
 
+    /**
+     * Sets properties for the primary stage
+     */
     private void setStageProperties(){
         stage.centerOnScreen();
         stage.setTitle("");

@@ -7,12 +7,6 @@ import java.util.ArrayList;
  */
 public final class Competition extends Activity
 {
-
-    /**
-     * Instantiates a new Competition.
-     *
-     * @param name the name
-     */
     public Competition(String name)
     {
         super(name);

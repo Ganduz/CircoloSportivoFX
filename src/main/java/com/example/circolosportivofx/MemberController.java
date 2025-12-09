@@ -3,18 +3,17 @@ package com.example.circolosportivofx;
 import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-
 import java.io.IOException;
 import java.net.URL;
-import java.util.Objects;
 import java.util.ResourceBundle;
 
+/**
+ * Controller class for member activities in the JavaFX application.
+ */
 public class MemberController implements Initializable {
     @FXML
     private Label titleLabel;
@@ -35,8 +34,12 @@ public class MemberController implements Initializable {
     private Button backButton;
 
 
+    /**
+     * Initializes the controller class (method inherited from interface).
+     * @param location
+     * @param resources
+     */
     public void initialize(URL location, ResourceBundle resources) {
-        //titleLabel.setText(titleLabel.getText() + " " + Data.getInstance().getLoggedUser().getName());
         populateComboBox();
         if (Data.getInstance().getLoggedUser() instanceof Admin) {
             backButton.setVisible(true);
@@ -48,6 +51,9 @@ public class MemberController implements Initializable {
         }
     }
 
+    /**
+     * Populates the subscribe and unsubscribe combo boxes based on the logged-in user's subscriptions.
+     */
     private void populateComboBox() {
         comboUnsubscribe.getItems().clear();
         comboSubscribe.getItems().clear();
@@ -69,6 +75,10 @@ public class MemberController implements Initializable {
 
     }
 
+    /**
+     * Unsubscribes the logged-in user from the selected activity.
+     * @param actionEvent button click event
+     */
     public void unsubscribe(ActionEvent actionEvent) {
         if (comboUnsubscribe.getSelectionModel().getSelectedItem() != null) {
             Activity activity = comboUnsubscribe.getSelectionModel().getSelectedItem();
@@ -84,7 +94,11 @@ public class MemberController implements Initializable {
         }
     }
 
-    public void subscribe(ActionEvent actionEvent) throws IOException {
+    /**
+     * Subscribes the logged-in user to the selected activity.
+     * @param actionEvent button click event
+     */
+    public void subscribe(ActionEvent actionEvent) {
         if (comboSubscribe.getSelectionModel().getSelectedItem() != null) {
             Activity activity = comboSubscribe.getSelectionModel().getSelectedItem();
             activity.addSubscriber(Data.getInstance().getLoggedUser());
@@ -99,12 +113,22 @@ public class MemberController implements Initializable {
         }
     }
 
+    /**
+     * Logs out the current user and returns to the login scene.
+     * @param actionEvent button click event
+     * @throws IOException if scene change fails
+     */
     public void logout(ActionEvent actionEvent) throws IOException {
         SceneController.getInstance((Stage) ((Button) actionEvent.getSource()).getScene().getWindow()).changeScene("login");
         Data.getInstance().writeOutput("Member: " + Data.getInstance().getLoggedUser().getName() + Data.getInstance().getLoggedUser().getSurname() + " logged out.");
         Data.getInstance().setLoggedUser(null);
     }
 
+    /**
+     * Navigates back to the admin scene.
+     * @param actionEvent button click event
+     * @throws IOException if scene change fails
+     */
     public void previousScene(ActionEvent actionEvent) throws IOException {
         SceneController.getInstance((Stage) ((Button) actionEvent.getSource()).getScene().getWindow()).changeScene("admin");
     }

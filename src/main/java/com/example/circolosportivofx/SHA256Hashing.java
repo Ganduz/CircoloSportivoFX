@@ -3,8 +3,15 @@ package com.example.circolosportivofx;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+/**
+ * Utility class for generating SHA-256 hashes.
+ */
 public class SHA256Hashing {
 
+    /**
+     * @param input
+     * @return SHA-256 hash of the input string in hexadecimal format.
+     */
     public static String generateSHA256Hash(String input) {
         try {
             // Create a MessageDigest instance for SHA-256

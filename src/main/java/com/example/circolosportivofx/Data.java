@@ -8,7 +8,7 @@ import java.nio.file.Paths;
 import java.util.*;
 
 /**
- * The type Data.
+ * Singleton class that manages the data of the sports club application,
  */
 public class Data {
     private static Data instance = null;
@@ -20,7 +20,11 @@ public class Data {
     private Member loggedUser = null;
 
 
-    // Metodo per ottenere l'istanza unica
+    /**
+     * Gets instance.
+     *
+     * @return the instance
+     */
     public static Data getInstance() {
         if (instance == null) {
             instance = new Data();
@@ -38,43 +42,29 @@ public class Data {
         loadActivities();
     }
 
-    /**
-     * Gets members.
-     *
-     * @return the members
-     */
     public ArrayList<Member> getMembers() {
         return members;
     }
 
-    /**
-     * Sets members.
-     *
-     * @param members the members
-     */
     public void setMembers(ArrayList<Member> members) {
         this.members = members;
     }
 
-    /**
-     * Gets activities.
-     *
-     * @return the activities
-     */
     public ArrayList<Activity> getActivities() {
         return activities;
     }
 
-    /**
-     * Sets activities.
-     *
-     * @param activities the activities
-     */
     public void setActivities(ArrayList<Activity> activities) {
         this.activities = activities;
     }
 
+    public Member getLoggedUser() { return loggedUser; }
 
+    public void setLoggedUser(Member loggedUser) { this.loggedUser = loggedUser; }
+
+    /**
+     * Load users from JSON file.
+     */
     private void loadUsers() {
         try (InputStream inputStream = Files.newInputStream(Paths.get(filepathUsers));){
             String jsonText = new String(inputStream.readAllBytes(), StandardCharsets.UTF_8);
@@ -121,6 +111,9 @@ public class Data {
         }
     }
 
+    /**
+     * Save users to JSON file.
+     */
     public void saveUsers() {
         JSONObject root = new JSONObject();
         JSONArray adminsArray = new JSONArray();
@@ -151,6 +144,9 @@ public class Data {
         }
     }
 
+    /**
+     * Save activities to JSON file.
+     */
     public void saveActivities() {
         JSONObject root = new JSONObject();
         JSONArray coursesArray = new JSONArray();
@@ -201,6 +197,9 @@ public class Data {
         }
     }
 
+    /**
+     * Load activities from JSON file.
+     */
     public void loadActivities() {
         try(InputStream inputStream = Files.newInputStream(Paths.get(filepathActivities));) {
 
@@ -222,14 +221,11 @@ public class Data {
         }
     }
 
-    public Member getLoggedUser() {
-        return loggedUser;
-    }
 
-    public void setLoggedUser(Member loggedUser) {
-        this.loggedUser = loggedUser;
-    }
-
+    /**
+     * Write output message to log file.
+     * @param message the message to write
+     */
     public void writeOutput(String message) {
         try (FileWriter writer = new FileWriter("output.txt", true)) {
             writer.write(message + System.lineSeparator());
@@ -238,7 +234,9 @@ public class Data {
         }
     }
 
-
+    /**
+     * Mark the end of output session in log file.
+     */
     public void endOutput() {
         try (FileWriter writer = new FileWriter("output.txt", true)) {
             writer.write("----- End of Session -----" + System.lineSeparator());
@@ -247,6 +245,9 @@ public class Data {
         }
     }
 
+    /**
+     * Mark the start of output session in log file.
+     */
     public void startOutput() {
         try (FileWriter writer = new FileWriter("output.txt")) {
             writer.write("----- Start of Session -----" + System.lineSeparator());
@@ -255,6 +256,11 @@ public class Data {
         }
     }
 
+    /**
+     * Load activities from a JSON array.
+     * @param type the type of activity ("course" or "competition")
+     * @param array the JSON array containing activity data
+     */
     private void loadFromList(String type, JSONArray array) {
         if (array != null) {
             for (int i = 0; i < array.length(); i++) {
@@ -299,20 +305,23 @@ public class Data {
     }
 
 
+    /**
+     * Extracts JSON data files from the JAR to an external folder if they do not already exist.
+     * @throws IOException if an I/O error occurs
+     */
     public static void extractDataFolder() throws IOException {
-        // Cartella esterna dove vuoi copiare i file
+        // External folder path to extract JSON files
         File outDir = new File("data/json");
         if (!outDir.exists()) {
             outDir.mkdirs();
         }
 
-        // Lista dei file JSON nella cartella resources/data
+        // List of JSON files to extract
         String[] files = { "users.json", "activities.json" };
 
         for (String fileName : files) {
             File outFile = new File(outDir, fileName);
 
-            // Copia solo se il file non esiste già
             if (!outFile.exists()) {
                 String resourcePath = "json/" + fileName;
 

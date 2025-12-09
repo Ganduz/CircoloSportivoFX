@@ -1,27 +1,18 @@
 package com.example.circolosportivofx;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * The type Activity.
+ * @abstract @class Activity Abstract class that represents an activity with a name and a list of subscribers.
  */
 public abstract class Activity
 {
-    /**
-     * The Subscribers.
-     */
+
     protected ArrayList<Member> subscribers;
-    /**
-     * The Name.
-     */
+
     protected String name;
 
-    /**
-     * Instantiates a new Activity.
-     *
-     * @param name the name
-     */
     public Activity(String name)
     {
         this.subscribers = new ArrayList<Member>();
@@ -34,49 +25,28 @@ public abstract class Activity
         this.name = name ;
     }
 
-    /**
-     * Gets subscribers.
-     *
-     * @return the subscribers
-     */
     public ArrayList<Member> getSubscribers()
     {
         return subscribers;
     }
 
-    /**
-     * Sets subscribers.
-     *
-     * @param subscribers the subscribers
-     */
     public void setSubscribers(ArrayList<Member> subscribers)
     {
         this.subscribers = subscribers;
     }
 
-    /**
-     * Gets name.
-     *
-     * @return the name
-     */
     public String getName() {
         return name;
     }
 
-    /**
-     * Sets name.
-     *
-     * @param name the name
-     */
     public void setName(String name) {
         this.name = name;
     }
 
-
     /**
-     * Add subscriber.
+     * Adds a subscriber to the activity if they are not already enrolled.
      *
-     * @param person per differenziare tra socio e admin si puo fare un controllo con instanceof per ora aggiungo semplicemente la persona alla lista dei subscribers
+     * @param person the member to be added as a subscriber
      */
     public void addSubscriber(Member person)
     {
@@ -87,9 +57,9 @@ public abstract class Activity
     }
 
     /**
-     * Remove subscriber.
+     * Removes a subscriber from the activity based on their email.
      *
-     * @param person the person
+     * @param person the person to be removed as a subscriber
      */
     public void removeSubscriber(Person person)
     {

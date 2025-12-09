@@ -8,11 +8,6 @@ import java.util.ArrayList;
 public final class Course extends Activity
 {
 
-    /**
-     * Instantiates a new Course.
-     *
-     * @param name the name
-     */
     public Course(String name)
     {
         super(name);

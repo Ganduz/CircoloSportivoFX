@@ -10,6 +10,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * Controller class for modifying member information in the JavaFX application.
+ */
+
 public class ModifyMemberController implements Initializable {
 
     @FXML
@@ -28,10 +32,18 @@ public class ModifyMemberController implements Initializable {
         populateMemberList();
     }
 
+    /**
+     * Navigates back to the admin scene.
+     * @param actionEvent button click event
+     * @throws IOException if scene change fails
+     */
     public void previousScene(ActionEvent actionEvent) throws IOException {
         SceneController.getInstance((javafx.stage.Stage) backButton.getScene().getWindow()).changeScene("admin");
     }
 
+    /**
+     * Populates the member combo box with members excluding the logged-in user.
+     */
     private void populateMemberList() {
         memberComboBox.getItems().clear();
         memberComboBox.getSelectionModel().clearSelection();
@@ -47,6 +59,10 @@ public class ModifyMemberController implements Initializable {
         }
     }
 
+    /**
+     * Modifies the selected member's information based on input fields.
+     * @param actionEvent button click event
+     */
     public void modifyMember(ActionEvent actionEvent) {
         Admin admin = (Admin) Data.getInstance().getLoggedUser();
         if(memberComboBox.getValue() == null) {
@@ -86,6 +102,10 @@ public class ModifyMemberController implements Initializable {
         }
     }
 
+    /**
+     * Handles member selection from the combo box and populates fields.
+     * @param actionEvent selection event
+     */
     public void memberSelected(ActionEvent actionEvent) {
         if(memberComboBox.getValue() == null) {
             nameField.setText("");
@@ -101,6 +121,9 @@ public class ModifyMemberController implements Initializable {
         }
     }
 
+    /**
+     * Clears all input fields and selections.
+     */
     private void clearFields() {
         nameField.clear();
         surnameField.clear();
