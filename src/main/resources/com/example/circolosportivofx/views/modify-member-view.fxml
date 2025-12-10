@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="558.0" prefWidth="504.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.circolosportivofx.ModifyMemberController">
+<AnchorPane prefHeight="558.0" prefWidth="504.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.circolosportivofx.controllers.ModifyMemberController">
    <children>
       <ComboBox fx:id="memberComboBox" layoutX="84.0" layoutY="96.0" onAction="#memberSelected" prefHeight="36.0" prefWidth="337.0" styleClass="custom-combobox" />
       <TextField fx:id="nameField" layoutX="84.0" layoutY="170.0" prefHeight="36.0" prefWidth="337.0" styleClass="input-field" />

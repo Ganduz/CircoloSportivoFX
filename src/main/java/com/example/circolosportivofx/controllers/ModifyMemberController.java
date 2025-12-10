@@ -1,5 +1,9 @@
-package com.example.circolosportivofx;
+package com.example.circolosportivofx.controllers;
 
+import com.example.circolosportivofx.Admin;
+import com.example.circolosportivofx.Data;
+import com.example.circolosportivofx.Member;
+import com.example.circolosportivofx.SHA256Hashing;
 import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

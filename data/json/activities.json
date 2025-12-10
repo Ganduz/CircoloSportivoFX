@@ -8,12 +8,20 @@
                     "name": "Bob",
                     "email": "bob"
                 }],
-                "admins": [{
-                    "password": "alice",
-                    "surname": "Smith",
-                    "name": "Alice",
-                    "email": "alice"
-                }]
+                "admins": [
+                    {
+                        "password": "alice",
+                        "surname": "Smith",
+                        "name": "Alice",
+                        "email": "alice"
+                    },
+                    {
+                        "password": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8",
+                        "surname": "admin",
+                        "name": "admin",
+                        "email": "admin"
+                    }
+                ]
             },
             "name": "Tennis"
         },
@@ -66,7 +74,12 @@
         {
             "subscribers": {
                 "members": [],
-                "admins": []
+                "admins": [{
+                    "password": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8",
+                    "surname": "admin",
+                    "name": "admin",
+                    "email": "admin"
+                }]
             },
             "name": "Calcio"
         }

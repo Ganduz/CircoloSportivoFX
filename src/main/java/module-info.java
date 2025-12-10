@@ -18,4 +18,6 @@ module com.example.circolosportivofx {
 
     opens com.example.circolosportivofx to javafx.fxml;
     exports com.example.circolosportivofx;
+    exports com.example.circolosportivofx.controllers;
+    opens com.example.circolosportivofx.controllers to javafx.fxml;
 }

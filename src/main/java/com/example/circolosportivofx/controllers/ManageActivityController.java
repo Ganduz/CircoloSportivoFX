@@ -1,5 +1,6 @@
-package com.example.circolosportivofx;
+package com.example.circolosportivofx.controllers;
 
+import com.example.circolosportivofx.*;
 import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

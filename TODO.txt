@@ -1,2 +1,0 @@
- - scrivere javadocs
- - inserire nuova view per la modifica dell utente

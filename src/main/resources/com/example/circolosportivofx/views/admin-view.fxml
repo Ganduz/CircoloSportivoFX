@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="615.0" prefWidth="600.0" styleClass="root-pane" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.circolosportivofx.AdminController">
+<AnchorPane prefHeight="615.0" prefWidth="600.0" styleClass="root-pane" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.circolosportivofx.controllers.AdminController">
    <children>
       <Label alignment="CENTER" layoutX="84.0" layoutY="54.0" prefHeight="59.0" prefWidth="433.0" styleClass="title" text="Benvenuto Admin " />
       <Button fx:id="manageActivitiesButton" layoutX="84.0" layoutY="276.0" mnemonicParsing="false" onAction="#manageActivitiesButtonAction" prefHeight="68.0" prefWidth="433.0" styleClass="custom-button" text="Manage Activity" />

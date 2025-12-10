@@ -1,5 +1,6 @@
-package com.example.circolosportivofx;
+package com.example.circolosportivofx.controllers;
 
+import com.example.circolosportivofx.CircoloSportivoApplication;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;

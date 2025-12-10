@@ -1,2 +1,8 @@
 ----- Start of Session -----
+Login Successful: admin admin logged in.
+User admin admin subscribed to activity Calcio
+Activity List : [(Admin) admin admin]
+User admin admin subscribed to activity Tennis
+Activity List : [(Admin) Alice Smith, (Member) Bob Johnson, (Admin) admin admin]
+Member: admin admin logged out.
 ----- End of Session -----

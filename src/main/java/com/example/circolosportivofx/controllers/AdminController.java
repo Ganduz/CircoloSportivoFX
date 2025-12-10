@@ -1,5 +1,6 @@
-package com.example.circolosportivofx;
+package com.example.circolosportivofx.controllers;
 
+import com.example.circolosportivofx.Data;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
