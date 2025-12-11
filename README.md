@@ -1,3 +1,5 @@
+### Author: Davide Gandolfi, Alex Medioli
+
 # CircoloSportivoFX
 
 CircoloSportivoFX è un progetto Java basato su **JavaFX** che gestisce le funzioni amministrative e operative di un circolo sportivo: attività, corsi, competizioni, membri e dati amministrativi.
