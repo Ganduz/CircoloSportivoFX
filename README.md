@@ -3,7 +3,7 @@
 CircoloSportivoFX è un progetto Java basato su **JavaFX** che gestisce le funzioni amministrative e operative di un circolo sportivo: attività, corsi, competizioni, membri e dati amministrativi.
 
 # Importante
-Per testare l'applicazione la password di tutti gli utenti è `password`
+Per testare l'applicazione la password degli utenti già inseriti è `password`
 
 ## 🧱 Struttura del Progetto
 
@@ -52,6 +52,7 @@ Nella cartella **json** sono salvati i dati : attività e membri.
 
 ## 📌 Note
 * `target/` contiene i risultati della build Maven.
+* Volendo il progetto funziona anche creando il jar eseguibile, i file json vengono copiati nella cartella dove e presente il file .jar in questo modo possono essere letti e scritti.
 
 
 
